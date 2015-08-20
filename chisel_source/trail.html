@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" ng-app="mainRouter">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script language="javascript">
+	    if (typeof(UserAgentInfo) != 'undefined' && !window.addEventListener) {
+	        UserAgentInfo.strBrowser=1;
+	    }
+	</script>
+	<style>
+		body {
+			overflow-x:hidden;
+		}
+	</style>
+	<title>Trail Walker</title>
+	<link rel="shortcut icon" type="image/png" href="img/croatia.jpg"/>
+	<link rel="shortcut icon" type="image/png" href="/"/>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+	
+	<link href="css/bootstrap-datepicker.css" rel="stylesheet" />
+
+	<!-- 3rd Party -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/bootstrap/js/transition.js"></script>
+	<script src="bower_components/bootstrap/js/collapse.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/d3.v3.min.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript">
+	function initialize() {
+		var i;
+		var arrDestinations = [
+			{
+				lat: 50.815155, 
+				lon: -0.137072, 
+				title: "Brighton Pier", 
+				description: "Brighton Palace Pier dates to 1899"
+			},
+			{
+				lat: 50.822638, 
+				lon: -0.137361, 
+				title: "Brighton Pavilion", 
+				description: "The Pavilion was built for the Prince of Wales in 1787"
+			},
+			{
+				lat: 50.821226, 
+				lon: -0.139372, 
+				title: "English's", 
+				description: "English's Seafood Restaurant and Oyster Bar"
+			}
+		];
+		
+		var myOptions = {
+			zoom: 15,
+			center: new google.maps.LatLng(50.820645,-0.137376),
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		
+		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		
+		var infowindow =  new google.maps.InfoWindow({
+			content: ''
+		});
+		
+		// loop over our array
+		for (i = 0; i < arrDestinations.length; i++) {
+			// create a marker
+			var marker = new google.maps.Marker({
+				title: arrDestinations[i].title,
+				position: new google.maps.LatLng(arrDestinations[i].lat, arrDestinations[i].lon),
+				map: map
+			});
+			
+			// add an event listener for this marker
+			bindInfoWindow(marker, map, infowindow, "<p>" + arrDestinations[i].description + "</p>");  
+		}
+	}
+
+	function bindInfoWindow(marker, map, infowindow, html) { 
+		google.maps.event.addListener(marker, 'click', function() { 
+			infowindow.setContent(html); 
+			infowindow.open(map, marker); 
+		}); 
+	} 
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:rgba(215, 112, 44, 0.4);">
+	<div class="navbar-background">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<i class="glyphicon glyphicon-tree-conifer pull-left" style="color:#fff;font-size:35px;margin-left:20px;margin-top:8px;"></i>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+				<span class="icon-bar"></span> <span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/#/" style="color:#fff;">Chisel</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav"></ul>
+			<ul class="nav navbar-nav navbar-right">
+				<a class="navbar-brand" href="/register">Sign Up</a>
+				<a class="navbar-brand" href="/login">Login</a>
+				<a class="navbar-brand" href="/about">About</a>
+				<a class="navbar-brand" href="trail.html">Test Page</a>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	</nav>
+	<div class="section" style="height:500px;">
+		<div id="map_canvas" style="position:relative;width:100%;height:80%;"></div>
+	</div>
+</body>
+</html>
