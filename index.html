@@ -15,7 +15,7 @@
 			overflow-x:hidden;
 		}
 	</style>
-	<title>Trail Walker</title>
+	<title>Chisel</title>
 	<link rel="shortcut icon" type="image/png" href="img/croatia.jpg"/>
 	<link rel="shortcut icon" type="image/png" href="/"/>
 
@@ -24,6 +24,9 @@
 	
 	<link href="css/bootstrap-datepicker.css" rel="stylesheet" />
 
+	<link rel="stylesheet" type="text/css" href="css/index_style.css"/>
+
+
 	<!-- 3rd Party -->
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -31,9 +34,14 @@
 	<script src="bower_components/bootstrap/js/collapse.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/d3.v3.min.js"></script>
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Play|Cuprum|Orbitron|Istok+Web|Julius+Sans+One|Michroma|Megrim|Iceland|Rationale|Tulpen+One|Overlock+SC' rel='stylesheet' type='text/css'>
+
 </head>
+
+<!-- BODY -->
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:rgba(215, 112, 44, 0.4);">
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background:rgba(51, 51, 51, 0.4);">
 	<div class="navbar-background">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -46,7 +54,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav"></ul>
-			<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav navbar-right" style="margin-right:20px;">
 				<a class="navbar-brand" href="/register">Sign Up</a>
 				<a class="navbar-brand" href="/login">Login</a>
 				<a class="navbar-brand" href="/about">About</a>
@@ -56,45 +64,85 @@
 		<!-- /.navbar-collapse -->
 	</div>
 	</nav>
-	<div class="section">
-		<img src="img/highlight_photos/DSC00104.JPG" style="width:100%;height:auto;"></img>
-	</div>
-	<div class="section">
-		<h3>Options</h3>
-		<div class="col-lg-10 col-lg-offset-1">
-			<div class="row">
-			  <div class="col-sm-5 col-md-4">
-			    <div class="thumbnail">
-			      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQxIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTRmMGYyYTk5ZWQgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNGYwZjJhOTllZCI+PHJlY3Qgd2lkdGg9IjI0MSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS4zODI4MTI1IiB5PSIxMDUuMzM5MDYyNSI+MjQxeDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" alt="..."></img>
-			      <div class="caption">
-			        <h3>Thumbnail label</h3>
-			        <p>...</p>
-			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-			      </div>
-			    </div>
-			  </div>
-			  <div class="col-sm-5 col-md-4">
-			    <div class="thumbnail">
-			      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQxIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTRmMGYyYTk5ZWQgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNGYwZjJhOTllZCI+PHJlY3Qgd2lkdGg9IjI0MSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS4zODI4MTI1IiB5PSIxMDUuMzM5MDYyNSI+MjQxeDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" alt="..."></img>
-			      <div class="caption">
-			        <h3>Thumbnail label</h3>
-			        <p>...</p>
-			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-			      </div>
-			    </div>
-			  </div>
-			  <div class="col-sm-5 col-md-4">
-			    <div class="thumbnail">
-			      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQxIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTRmMGYyYTk5ZWQgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNGYwZjJhOTllZCI+PHJlY3Qgd2lkdGg9IjI0MSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS4zODI4MTI1IiB5PSIxMDUuMzM5MDYyNSI+MjQxeDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" alt="..."></img>
-			      <div class="caption">
-			        <h3>Thumbnail label</h3>
-			        <p>...</p>
-			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-			      </div>
-			    </div>
-			  </div>
+	
+	<!-- Welcome container -->
+	<div class="welcome">
+		<div class="container">
+			<h1>Carve Your Path</h1>
+			<a class="btn" href="#">Find your next adventure</a>
+
+			<div class="quick">
+				<p>Insert quick search here.</p>
 			</div>
 		</div>
 	</div>
+
+	<!-- Intro Video (What We Do) -->
+	<div class="intro_vid">
+		<div class="container">
+			<h1>What We Do</h1>
+			<a class="btn" href="#">Play</a>
+		</div>
+	</div>
+	
+
+	<!-- New Highlights -->
+	<div class="highlights">
+		<div class="container">
+
+			<div class="row">
+          		<div class="col-md-4">
+            		<a href="#"><img class=".img-responsive" src="file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00052.JPG"></a>
+		        </div>
+		        <div class="col-md-4">
+            		<a href="#"><img class=".img-responsive" src="file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00053.JPG"></a>
+		        </div>
+		        <div class="col-md-4">
+            		<a href="#"><img class=".img-responsive" src="file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00054.JPG"></a>
+		        </div>
+		    </div>
+		    <div class="row">
+          		<div class="col-md-4">
+            		<a href="#"><img class=".img-responsive" src="file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00067.JPG"></a>
+		        </div>
+		        <div class="col-md-4">
+            		<a href="#"><img class=".img-responsive" src="file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00077.JPG"></a>
+		        </div>
+		        <div class="col-md-4">
+            		<a href="#"><img class=".img-responsive" src="file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00082.JPG"></a>
+		        </div>
+		    </div>
+		    <div class="row">
+          		<div class="col-md-4">
+            		<a href="#"><img class=".img-responsive" src="file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00085.JPG"></a>
+		        </div>
+		        <div class="col-md-4">
+            		<a href="#"><img class=".img-responsive" src="file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00090.JPG"></a>
+		        </div>
+		        <div class="col-md-4">
+            		<a href="#"><img class=".img-responsive" src="file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00108.JPG"></a>
+		        </div>
+		    </div>
+
+		</div>
+	</div>
+
+	<div class="community">
+		<div class="container">
+			<h1>Community</h1>
+			<a class ="btn" href="#">Come Meet Your Outdoor Family</a>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="container">
+			<ul>
+				<li><a href="#">Company</a></li>
+				<li><a href="#">Partners</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+	
 </body>
 </html>
