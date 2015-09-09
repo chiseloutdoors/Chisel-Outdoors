@@ -1,0 +1,132 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar-brand {
+  font-family: 'Michroma', sans-serif;
+}
+
+h1, p {
+  font-family: 'Megrim', sans-serif; 
+  font: white;
+}
+
+
+.container {
+  margin: 20 auto;
+  max-width: 940px; 
+  padding: 0 0; 
+}
+
+.btn {
+  background-color: #333;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1.3px;
+  padding: 16px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Welcome Section */
+.welcome {
+  height: 700px;
+  color: #fff;
+  text-align: center;
+	background-image: url(file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00104.JPG);
+  background-size: cover;
+}
+
+.welcome h1 {
+  font-size: 100px;
+  margin-top: 250px;
+}
+
+/* Quick Search Section */
+.quick {
+  height: 50px; 
+  color: #fff;
+  text-align: center;
+  background-size: 50px cover;
+  background-color: #333;
+}
+
+.quick p {
+  margin-top: 15px;
+}
+
+/* Intro Video Section */
+.intro_vid {
+  height: 600px;
+  width: 80%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  /*border-top: 1px solid #333;*/
+  color: #fff;
+  text-align: center;
+  background-image: url(file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00077.JPG);
+  background-size: cover; 
+}
+
+.intro_vid h1 {
+  font-size: 100px;
+  margin-top: 200px;
+}
+
+/* Highlights Section */
+.highlights {
+  margin-top: 50px;
+}
+
+.highlights h1 {
+  font-size: 100px;
+  margin-top: 200px;
+}
+
+.row img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0px 0px;
+  padding: 0px 0px;
+}
+
+/* Community Section */
+.community {
+  margin-top: 50px;
+  height: 700px;
+  color: #fff;
+  text-align: center;
+  background-image: url(file:///Users/Alix/Desktop/chisel_source/img/highlight_photos/DSC00114.JPG);
+  background-size: cover;
+}
+
+.community h1 {
+  font-size: 100px;
+  margin-top: 200px;
+}
+
+.footer {
+  height: 100px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+.footer ul {
+  margin-top: 20px;
+}
+
+.footer li {
+  display: inline-block;
+  padding: 20px 15px;
+}
+
+.footer a {
+  color: white;
+  font-style: none;
+
+}
