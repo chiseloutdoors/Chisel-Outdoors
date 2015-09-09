@@ -1,0 +1,244 @@
+@import url(normalize.css);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600);
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,500,400);
+@font-face {
+	font-family: 'Gauge';
+	src: url('fonts/Gauge-Regular.otf');
+}
+body {
+	margin: 0;
+/*	background-color: #fcc;*/
+}
+h3 {
+	margin: 0 auto;
+	padding: 0em;
+	font-family: Raleway, 600;
+}
+#wrapper {
+	background-color: #cfc;
+	margin: 0 auto;
+}
+#nav {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: #333;
+	margin: 0 auto;
+	z-index: 1;
+	font-family: Raleway, 600;
+	opacity: 0.85;
+}
+#nav p {
+	padding-left: 1em;
+}
+#nav a {
+	color: rgba(200,200,200,1);
+	text-decoration: none;
+}
+#nav ul a {
+	color: rgba(200,200,200,1);
+	text-decoration: none;
+}
+#trail {
+	margin-top: 3.5em;
+	padding: 0.5em;
+	z-index: 1;
+	text-align: center;
+	background-color: #333;
+}
+#trail h3 {
+	margin: 0 auto;
+	padding: 0em;
+	font-family: Raleway, 600;
+	color: rgba(128,128,128,1);
+	text-decoration: none;
+}
+
+/*#map {
+	margin: 0 auto;
+	margin-top: 0em;
+	padding: 0em;
+}*/
+
+
+#trailnav {
+	width: 100%;
+	background-color: #333;
+	font-size: 1.25em;
+	z-index: 1;
+	margin-top: -5.75em;
+	padding: 0em;
+	background:rgba(255, 255, 255);
+	opacity: .5;
+	
+}
+#trailnav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: Raleway, 400;
+}
+#trailnav ul li {
+	padding: 0.5em 1em;
+	display: inline-block;
+	text-align: center;
+}
+#trailnav ul li a {
+	font-family: Raleway, 400;
+	padding: 0.5em 0.5em;
+	color: rgba(128,128,128,1);
+	text-decoration: none;
+}
+#trailnav ul li:hover > ul {
+	display: block;
+}
+#trailnav ul li a:hover {
+	color: #fff;
+}
+#trailnav ul ul {
+	display: none;
+	background: #5f6975;
+	border-radius: 0px;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+}
+#trailnav ul ul li {
+	float: none;
+	text-align: left;
+	border-top: 1px solid #6b727c;
+	border-bottom: 1px solid ##575f6a;
+	position: relative;
+	display: block;
+}
+#trailnav ul ul li a img:hover {
+	color: rgba(255,255,255,1);
+}
+
+#trailnav img {
+	max-height: 20px;
+	max-width: 20px;
+}
+
+#prep {
+	background: url(../img/highlight_photos/DSC00052.jpg) 50%;
+	height: 80vh;
+	width: 80vh;
+	width: 100%;
+	max-width: 1920px;
+	margin-top: 0em;
+	padding: 1em;
+}
+#prep h3 {
+	margin: 0 auto;
+	padding: 0em;
+	font-family: Raleway, 600;
+	display: inline-block;
+	z-index: -1;
+}
+
+.clothes-sub {
+  background: rgba(51, 51, 51, 0.4);
+  right: -285px;  /* start off behind the scenes */
+  height: 80vh;
+  position: absolute;
+  width: 285px;
+}
+
+.icon-close {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+#prepnav {
+	width: 100%;
+	background-color: #333 40%;
+	font-size: 1.25em;
+	z-index: 1;
+	margin-top: 0em;
+	padding: 0em;
+	background:rgba(51, 51, 51, 0.5);
+}
+#prepnav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: Raleway, 400;
+}
+#prepnav ul li {
+	padding: 0.5em 1em;
+	display: inline-block;
+	text-align: center;
+}
+#prepnav ul li a {
+	font-family: Raleway, 400;
+	padding: 0.5em 0.5em;
+	color: rgba(128,128,128,1);
+	text-decoration: none;
+}
+#prepnav ul li:hover > ul {
+	display: block;
+}
+#prepnav ul li a:hover {
+	color: #fff;
+}
+#prepnav ul ul {
+	display: none;
+	background: #5f6975;
+	border-radius: 0px;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+}
+#prepnav ul ul li {
+	float: none;
+	text-align: left;
+	border-top: 1px solid #6b727c;
+	border-bottom: 1px solid ##575f6a;
+	position: relative;
+	display: block;
+}
+#prepnav ul ul li a img:hover {
+	color: rgba(255,255,255,1);
+}
+
+#prepnav img {
+	max-height: 20px;
+	max-width: 20px;
+}
+
+#more {
+  /* Prevent vertical gaps */
+  line-height: 0;
+   
+  -webkit-column-count: 3;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    3;
+  -moz-column-gap:      0px;
+  column-count:         3;
+  column-gap:           0px;  
+}
+
+#more img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+#footer {
+	background-color: #333;
+	margin-top: 0em;
+	padding: 1em;
+}
+#footer h3 {
+	font-family: Raleway, 400;
+	color: rgba(128,128,128,1);
+	text-align: right;
+	font-size: 0.5em;
+	padding: 0.25em;
+	margin: 0 auto;
+}
+
