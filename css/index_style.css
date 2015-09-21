@@ -7,6 +7,10 @@ html, body {
   font-family: 'Michroma', sans-serif;
 }
 
+.navbar-right a{
+  font-size: 10px;
+}
+
 h1, p {
   font-family: 'Megrim', sans-serif; 
   font: white;
@@ -90,7 +94,6 @@ h1, p {
 .highlights {
   margin-top: 50px;
 }
-
 .highlights h1 {
   color: white;
   text-align: center;
@@ -99,7 +102,6 @@ h1, p {
   background:rgba(51, 51, 51, 0.4);
   z-index: +1;
 }
-
 .row img{
   max-width: 100%;
   height: auto;
@@ -108,15 +110,56 @@ h1, p {
   padding: 0px 0px;
   z-index: -1;
 }
+/* Highlights Section */
+
+
+/* Recent Highlights Carousel */
+.carousel-inner {
+  height: 700px;
+  margin-top: 50px;
+}
+.carousel-inner img{
+    height: auto;
+}
+.carousel-caption {
+  margin-bottom: 120px;
+}
+/* Recent Highlights Carousel */ 
+
 
 /* Community Section */
+.community-card {
+    transition-duration: 0.8s;
+    transition-property: opacity, transform;
+    transition-timing-function: ease;
+}
+.row-full-height {
+  min-height: 250px; 
+  height: 500px;
+}
+.space-3 img {
+  height: 500px;
+  width: 300px;
+}
+
 .community {
   margin-top: 50px;
   height: 700px;
-  color: #fff;
-  text-align: center;
-  background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/highlight_photos/DSC00114.JPG);
-  background-size: cover;
+}
+#community {
+  background-color: red;
+  height: 500px;
+  margin-top: 100px;
+}
+#getting_started {
+  background-color: blue;
+  height: 500px;
+  margin-top: 100px;
+}
+#our_team {
+  background-color: green;
+  height: 500px;
+  margin-top: 100px;
 }
 
 .community h1 {
@@ -131,7 +174,14 @@ h1, p {
   color: white;
   text-align: center;
 }
+/* End Community Section */
 
+
+/* Footer */
+.footer {
+  height: 100px;
+  width: cover;
+}
 .footer ul {
   margin-top: 20px;
 }
@@ -144,5 +194,5 @@ h1, p {
 .footer a {
   color: white;
   font-style: none;
-
 }
+/* End Footer */

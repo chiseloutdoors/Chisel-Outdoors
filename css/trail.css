@@ -40,38 +40,23 @@ h3 {
 	color: rgba(200,200,200,1);
 	text-decoration: none;
 }
-#trail {
+
+
+#map {
 	margin-top: 3.5em;
-	padding: 0.5em;
-	z-index: 1;
-	text-align: center;
-	background-color: #333;
-}
-#trail h3 {
-	margin: 0 auto;
 	padding: 0em;
-	font-family: Raleway, 600;
-	color: rgba(128,128,128,1);
-	text-decoration: none;
+	height: 500px;
 }
 
-/*#map {
-	margin: 0 auto;
-	margin-top: 0em;
-	padding: 0em;
-}*/
-
-
+/* Trail Navigation */
 #trailnav {
 	width: 100%;
-	background-color: #333;
+	background-color: white;
 	font-size: 1.25em;
-	z-index: 1;
-	margin-top: -5.75em;
+	margin-top: 0px;
 	padding: 0em;
-	background:rgba(255, 255, 255);
-	opacity: .5;
-	
+	margin-bottom: 20px;
+	display: block;	
 }
 #trailnav ul {
 	list-style-type: none;
@@ -121,51 +106,81 @@ h3 {
 	max-height: 20px;
 	max-width: 20px;
 }
+/* End Trail Navigation */
 
+
+/* Advertisement */
+#advertise {
+	height: 50px;
+	width: 1000px;
+	border: 1px solid #333;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+	margin-left: 200px;
+}
+/* End Advertisement */
+
+
+/* Prep Slider */
 #prep {
-	background: url(../img/highlight_photos/DSC00052.jpg) 50%;
-	height: 80vh;
-	width: 80vh;
-	width: 100%;
-	max-width: 1920px;
-	margin-top: 0em;
-	padding: 1em;
+  height: 500px;
+  width: 80vh;
+  width: 100%;
+  max-width: 1920px;
+  margin-top: 0em;
+  position: relative;
+  margin-top: 20px;
 }
+
 #prep h3 {
-	margin: 0 auto;
-	padding: 0em;
-	font-family: Raleway, 600;
-	display: inline-block;
-	z-index: -1;
+  margin: 0 auto;
+  padding: 0em;
+  font-family: Raleway, 600;
+  display: inline-block;
 }
 
-.clothes-sub {
-  background: rgba(51, 51, 51, 0.4);
-  right: -285px;  /* start off behind the scenes */
-  height: 80vh;
+.slide {
+  background: transparent url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/feature-gradient-transparent.png') center center no-repeat;
+  background-size: cover;
+  display: none;
   position: absolute;
-  width: 285px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.icon-close {
-  cursor: pointer;
-  padding-left: 10px;
-  padding-top: 10px;
+.active-slide-prep {
+    display: block;
 }
 
+.active-slide-nearby {
+    display: block;
+}
+
+.active-btn{
+	background-color: #333;
+	opacity: .5;
+}
+
+#explain-slide{
+  background: url(../img/highlight_photos/DSC00052.jpg) 50%; 
+}
+/* End Prep Slider */
+
+
+/* Prep Navigation */
 #prepnav {
 	width: 100%;
-	background-color: #333 40%;
+	background-color: white;
 	font-size: 1.25em;
 	z-index: 1;
-	margin-top: 0em;
 	padding: 0em;
-	background:rgba(51, 51, 51, 0.5);
+	margin-bottom: 20px;
 }
 #prepnav ul {
 	list-style-type: none;
-	margin: 0;
-	padding: 0;
 	text-align: center;
 	font-family: Raleway, 400;
 }
@@ -210,6 +225,75 @@ h3 {
 	max-height: 20px;
 	max-width: 20px;
 }
+/* End Prep Navigation */
+
+
+/* Nearby Trails Slider */
+.nearby {
+  height: 500px;
+  width: 80vh;
+  width: 100%;
+  max-width: 1920px;
+  position: relative;
+}
+
+#nearby1 {
+	background-image: url(../img/highlight_photos/DSC00053.jpg);
+}
+#nearby2 {
+	background-image: url(../img/highlight_photos/DSC00054.jpg);
+}
+#nearby3 {
+	background-image: url(../img/highlight_photos/DSC00067.jpg);
+}
+#nearby4 {
+	background-image: url(../img/highlight_photos/DSC00077.jpg);
+}
+#nearby5 {
+	background-image: url(../img/highlight_photos/DSC00082.jpg);
+}
+/* End Nearby Trails Slider */
+
+
+/* Nearby Trails Navigation */
+.nearby-nav {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.arrow-prev {
+  margin-right: 45px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 9px;
+}
+
+.arrow-next {
+  margin-left: 45px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 9px;
+}
+
+.slider-dots {
+  list-style: none;
+  display: inline-block;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.slider-dots li {
+  color: #bbbcbc;
+  display: inline;
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+.slider-dots li.active-dot {
+  color: #363636;
+}
+/* End Nearby Trails Navigation */
+
 
 #more {
   /* Prevent vertical gaps */
@@ -228,10 +312,14 @@ h3 {
   width: 100% !important;
   height: auto !important;
 }
+
+
+/* Footer */
 #footer {
 	background-color: #333;
-	margin-top: 0em;
-	padding: 1em;
+	height: 100px;
+	color: white;
+  	text-align: center;
 }
 #footer h3 {
 	font-family: Raleway, 400;
@@ -241,4 +329,11 @@ h3 {
 	padding: 0.25em;
 	margin: 0 auto;
 }
-
+.footer li {
+  display: inline-block;
+  padding: 20px 15px;
+}
+.footer a {
+  color: white;
+  font-style: none;
+}
