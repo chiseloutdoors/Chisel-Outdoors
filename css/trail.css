@@ -14,10 +14,19 @@ h3 {
 	padding: 0em;
 	font-family: Raleway, 600;
 }
-#wrapper {
-	background-color: #cfc;
-	margin: 0 auto;
+.panel {
+  background: transparent url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/feature-gradient-transparent.png') center center no-repeat;
+  background-size: cover;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
+
+
+/* Page Nav Bar */
 #nav {
 	position: fixed;
 	width: 100%;
@@ -40,9 +49,10 @@ h3 {
 	color: rgba(200,200,200,1);
 	text-decoration: none;
 }
+/* End Page Nav Bar */
 
 
-#map {
+#trailMap {
 	margin-top: 3.5em;
 	padding: 0em;
 	height: 500px;
@@ -108,52 +118,109 @@ h3 {
 }
 /* End Trail Navigation */
 
-
-/* Advertisement */
-#advertise {
-	height: 50px;
-	width: 1000px;
-	border: 1px solid #333;
-	margin-top: 20px;
-	margin-bottom: 30px;
-	text-align: center;
-	margin-left: 200px;
+/* Trail Info */
+.trailInfo{
+	margin-top: 50px;
+	height: 150px;
 }
-/* End Advertisement */
+#quickInfo{
+	margin-left: 60px;
+}
+/* End Trail Info */
 
-
-/* Prep Slider */
-#prep {
+/* Prep Map */
+#prepMap {
   height: 500px;
   width: 80vh;
   width: 100%;
   max-width: 1920px;
   margin-top: 0em;
   position: relative;
-  margin-top: 20px;
+  margin-top: 50px;
+}
+.active-slide-map {
+    display: block;
+}
+/* End Prep Map */
+
+/* Prep Map Navigation */
+#prepMapnav {
+	width: 100%;
+	background-color: white;
+	font-size: 1.25em;
+	z-index: 1;
+	padding: 0em;
+	margin-bottom: 20px;
+}
+#prepMapnav ul {
+	list-style-type: none;
+	text-align: center;
+	font-family: Raleway, 400;
+}
+#prepMapnav ul li {
+	padding: 0.5em 1em;
+	display: inline-block;
+	text-align: center;
+}
+#prepMapnav ul li a {
+	font-family: Raleway, 400;
+	padding: 0.5em 0.5em;
+	color: rgba(128,128,128,1);
+	text-decoration: none;
+}
+#prepMapnav ul li:hover > ul {
+	display: block;
+}
+#prepMapnav ul li a:hover {
+	color: #fff;
+}
+#prepMapnav ul ul {
+	display: none;
+	background: #5f6975;
+	border-radius: 0px;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+}
+#prepMapnav ul ul li {
+	float: none;
+	text-align: left;
+	border-top: 1px solid #6b727c;
+	border-bottom: 1px solid ##575f6a;
+	position: relative;
+	display: block;
+}
+#prepMapnav ul ul li a img:hover {
+	color: rgba(255,255,255,1);
 }
 
-#prep h3 {
+#prepMapnav img {
+	max-height: 20px;
+	max-width: 20px;
+}
+/* End Prep Map Navigation */
+
+
+/* Prep Gear Slider */
+#prepGear {
+  height: 500px;
+  width: 80vh;
+  width: 100%;
+  max-width: 1920px;
+  margin-top: 0em;
+  position: relative;
+  margin-top: 50px;
+}
+#prepGear h3 {
   margin: 0 auto;
   padding: 0em;
   font-family: Raleway, 600;
   display: inline-block;
 }
-
-.slide {
-  background: transparent url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/feature-gradient-transparent.png') center center no-repeat;
-  background-size: cover;
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.active-slide-prep {
+.active-slide-gear {
     display: block;
 }
+
 
 .active-slide-nearby {
     display: block;
@@ -163,15 +230,22 @@ h3 {
 	background-color: #333;
 	opacity: .5;
 }
-
-#explain-slide{
-  background: url(../img/highlight_photos/DSC00052.jpg) 50%; 
-}
 /* End Prep Slider */
 
 
-/* Prep Navigation */
-#prepnav {
+
+/* Clothes Slide */
+#clothes-slide{
+	height: 500px;
+}
+#promotedClothes{
+	background-image: url(../img/Promotions/Chacos.jpg);
+	background-size: cover;
+}
+/* End Clothes Slide */
+
+/* Prep Gear Navigation */
+#prepGearnav {
 	width: 100%;
 	background-color: white;
 	font-size: 1.25em;
@@ -179,29 +253,29 @@ h3 {
 	padding: 0em;
 	margin-bottom: 20px;
 }
-#prepnav ul {
+#prepGearnav ul {
 	list-style-type: none;
 	text-align: center;
 	font-family: Raleway, 400;
 }
-#prepnav ul li {
+#prepGearnav ul li {
 	padding: 0.5em 1em;
 	display: inline-block;
 	text-align: center;
 }
-#prepnav ul li a {
+#prepGearnav ul li a {
 	font-family: Raleway, 400;
 	padding: 0.5em 0.5em;
 	color: rgba(128,128,128,1);
 	text-decoration: none;
 }
-#prepnav ul li:hover > ul {
+#prepGearnav ul li:hover > ul {
 	display: block;
 }
-#prepnav ul li a:hover {
+#prepGearnav ul li a:hover {
 	color: #fff;
 }
-#prepnav ul ul {
+#prepGearnav ul ul {
 	display: none;
 	background: #5f6975;
 	border-radius: 0px;
@@ -209,7 +283,7 @@ h3 {
 	position: absolute;
 	top: 100%;
 }
-#prepnav ul ul li {
+#prepGearnav ul ul li {
 	float: none;
 	text-align: left;
 	border-top: 1px solid #6b727c;
@@ -217,82 +291,47 @@ h3 {
 	position: relative;
 	display: block;
 }
-#prepnav ul ul li a img:hover {
+#prepGearnav ul ul li a img:hover {
 	color: rgba(255,255,255,1);
 }
 
-#prepnav img {
+#prepGearnav img {
 	max-height: 20px;
 	max-width: 20px;
 }
 /* End Prep Navigation */
 
 
-/* Nearby Trails Slider */
-.nearby {
-  height: 500px;
-  width: 80vh;
-  width: 100%;
-  max-width: 1920px;
-  position: relative;
-}
+#nearbyCarousel {
+	width: 100%;
+	background-color: white;
+	font-size: 1.25em;
+	padding: 0em;
 
-#nearby1 {
-	background-image: url(../img/highlight_photos/DSC00053.jpg);
 }
-#nearby2 {
-	background-image: url(../img/highlight_photos/DSC00054.jpg);
+.row img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  z-index: -1;
 }
-#nearby3 {
-	background-image: url(../img/highlight_photos/DSC00067.jpg);
-}
-#nearby4 {
-	background-image: url(../img/highlight_photos/DSC00077.jpg);
-}
-#nearby5 {
-	background-image: url(../img/highlight_photos/DSC00082.jpg);
-}
-/* End Nearby Trails Slider */
+/* Highlights Section */
 
 
-/* Nearby Trails Navigation */
-.nearby-nav {
-  text-align: center;
-  margin-top: 20px;
+/* Recent Highlights Carousel */
+.carousel-inner {
+  height: 700px;
+  margin-top: 50px;
 }
-
-.arrow-prev {
-  margin-right: 45px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 9px;
+.carousel-inner img{
+    height: auto;
 }
-
-.arrow-next {
-  margin-left: 45px;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 9px;
+.carousel-caption {
+  margin-bottom: 120px;
 }
-
-.slider-dots {
-  list-style: none;
-  display: inline-block;
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
-.slider-dots li {
-  color: #bbbcbc;
-  display: inline;
-  font-size: 30px;
-  margin-right: 5px;
-}
-
-.slider-dots li.active-dot {
-  color: #363636;
-}
-/* End Nearby Trails Navigation */
+/* Recent Highlights Carousel */ 
 
 
 #more {

@@ -1,5 +1,5 @@
 /*VARIABLES*/
-var trailhead = {lat: 50.820645, lng: -0.137376};
+var trailhead = {lat: 37.203467, lng: -113.641};
 var placeType = ''; /*search keywords for radar search*/
 var mapContainer = ''; /*where to place map in html*/
 
@@ -50,63 +50,7 @@ var main = function() {
     /* End Trail Nav */
     
 
-    /* PREP NAV */
-    $('.clothes-btn').click(function(){
-       var currentSlide = $('.active-slide-prep');
-       var nextSlide = $('#clothes-slide');
-
-       var currentBtn = $('.active-btn');
-       var nextBtn = $('.clothes-btn');
-
-       currentSlide.fadeOut(600).removeClass('active-slide-prep');
-       nextSlide.fadeIn(600).addClass('active-slide-prep');
-
-       currentBtn.removeClass('active-btn');
-       nextBtn.addClass('active-btn');
-    });
-
-    $('.equipment-btn').click(function(){
-       var currentSlide = $('.active-slide-prep');
-       var nextSlide = $('#equipment-slide');
-
-       var currentBtn = $('.active-btn');
-       var nextBtn = $('.equipment-btn');
-       
-       currentSlide.fadeOut(600).removeClass('active-slide-prep');
-       nextSlide.fadeIn(600).addClass('active-slide-prep');
-      
-       currentBtn.removeClass('active-btn');
-       nextBtn.addClass('active-btn');
-    });
-
-    $('.wildlife-btn').click(function(){
-       var currentSlide = $('.active-slide-prep');
-       var nextSlide = $('#wildlife-slide');
-       
-       currentSlide.fadeOut(600).removeClass('active-slide-prep');
-       nextSlide.fadeIn(600).addClass('active-slide-prep');
-
-       var currentBtn = $('.active-btn');
-       var nextBtn = $('.wildlife-btn');
-
-       currentBtn.removeClass('active-btn');
-       nextBtn.addClass('active-btn');
-    });
-
-    $('.info-btn').click(function(){
-       var currentSlide = $('.active-slide-prep');
-       var nextSlide = $('#info-slide');
-       
-       currentSlide.fadeOut(600).removeClass('active-slide-prep');
-       nextSlide.fadeIn(600).addClass('active-slide-prep');
-
-       var currentBtn = $('.active-btn');
-       var nextBtn = $('.info-btn');
-
-       currentBtn.removeClass('active-btn');
-       nextBtn.addClass('active-btn');
-    });
-
+    /* PREP MAP NAV */
     $('.services-btn').click(function(){
        var currentSlide = $('.active-slide-prep');
        var nextSlide = $('#services-slide');
@@ -122,11 +66,11 @@ var main = function() {
     });
 
     $('.food-btn').click(function(){
-       var currentSlide = $('.active-slide-prep');
+       var currentSlide = $('.active-slide-map');
        var nextSlide = $('#food-slide');
        
-       currentSlide.fadeOut(600).removeClass('active-slide-prep');
-       nextSlide.fadeIn(600).addClass('active-slide-prep');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
 
        var currentBtn = $('.active-btn');
        var nextBtn = $('.food-btn');
@@ -140,11 +84,11 @@ var main = function() {
 
     /* Pubs */
     $('.pubs-btn').click(function(){
-       var currentSlide = $('.active-slide-prep');
+       var currentSlide = $('.active-slide-map');
        var nextSlide = $('#pubs-slide');
        
-       currentSlide.fadeOut(600).removeClass('active-slide-prep');
-       nextSlide.fadeIn(600).addClass('active-slide-prep');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
 
        var currentBtn = $('.active-btn');
        var nextBtn = $('.pubs-btn');
@@ -159,11 +103,11 @@ var main = function() {
 
     /* Accomodations */
     $('.accomodations-btn').click(function(){
-       var currentSlide = $('.active-slide-prep');
+       var currentSlide = $('.active-slide-map');
        var nextSlide = $('#accomodations-slide');
        
-       currentSlide.fadeOut(600).removeClass('active-slide-prep');
-       nextSlide.fadeIn(600).addClass('active-slide-prep');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
 
        var currentBtn = $('.active-btn');
        var nextBtn = $('.accomodations-btn');
@@ -177,11 +121,11 @@ var main = function() {
 
     /* Transportation */
     $('.transport-btn').click(function(){
-       var currentSlide = $('.active-slide-prep');
+       var currentSlide = $('.active-slide-map');
        var nextSlide = $('#transport-slide');
        
-       currentSlide.fadeOut(600).removeClass('active-slide-prep');
-       nextSlide.fadeIn(600).addClass('active-slide-prep');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
 
        var currentBtn = $('.active-btn');
        var nextBtn = $('.transport-btn');
@@ -195,11 +139,11 @@ var main = function() {
 
     /* Airfare */
     $('.airfare-btn').click(function(){
-       var currentSlide = $('.active-slide-prep');
+       var currentSlide = $('.active-slide-map');
        var nextSlide = $('#airfare-slide');
        
-       currentSlide.fadeOut(600).removeClass('active-slide-prep');
-       nextSlide.fadeIn(600).addClass('active-slide-prep');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
 
        var currentBtn = $('.active-btn');
        var nextBtn = $('.airfare-btn');
@@ -210,7 +154,89 @@ var main = function() {
        /*Map Search*/
        radarSearch(trailhead, 'airport', "airfare-slide");
     });
-    /* End Prep Nav and Slides */
+    /* End Prep MAP Nav and Slides */
+
+    /* PREP GEAR */
+        $('.clothes-btn').click(function(){
+       var currentSlide = $('.active-slide-gear');
+       var nextSlide = $('#clothes-slide');
+
+       var currentBtn = $('.active-btn');
+       var nextBtn = $('.clothes-btn');
+
+       currentSlide.fadeOut(600).removeClass('active-slide-gear');
+       nextSlide.fadeIn(600).addClass('active-slide-gear');
+
+       currentBtn.removeClass('active-btn');
+       nextBtn.addClass('active-btn');
+    });
+
+    $('.pack-btn').click(function(){
+       var currentSlide = $('.active-slide-gear');
+       var nextSlide = $('#pack-slide');
+
+       var currentBtn = $('.active-btn');
+       var nextBtn = $('.pack-btn');
+       
+       currentSlide.fadeOut(600).removeClass('active-slide-gear');
+       nextSlide.fadeIn(600).addClass('active-slide-gear');
+      
+       currentBtn.removeClass('active-btn');
+       nextBtn.addClass('active-btn');
+    });
+    $('.sleep-btn').click(function(){
+       var currentSlide = $('.active-slide-gear');
+       var nextSlide = $('#sleep-slide');
+
+       var currentBtn = $('.active-btn');
+       var nextBtn = $('.sleep-btn');
+       
+       currentSlide.fadeOut(600).removeClass('active-slide-gear');
+       nextSlide.fadeIn(600).addClass('active-slide-gear');
+      
+       currentBtn.removeClass('active-btn');
+       nextBtn.addClass('active-btn');
+    });
+    $('.foodWater-btn').click(function(){
+       var currentSlide = $('.active-slide-gear');
+       var nextSlide = $('#foodWater-slide');
+
+       var currentBtn = $('.active-btn');
+       var nextBtn = $('.foodWater-btn');
+       
+       currentSlide.fadeOut(600).removeClass('active-slide-gear');
+       nextSlide.fadeIn(600).addClass('active-slide-gear');
+      
+       currentBtn.removeClass('active-btn');
+       nextBtn.addClass('active-btn');
+    });
+    $('.safety-btn').click(function(){
+       var currentSlide = $('.active-slide-gear');
+       var nextSlide = $('#safety-slide');
+
+       var currentBtn = $('.active-btn');
+       var nextBtn = $('.safety-btn');
+       
+       currentSlide.fadeOut(600).removeClass('active-slide-gear');
+       nextSlide.fadeIn(600).addClass('active-slide-gear');
+      
+       currentBtn.removeClass('active-btn');
+       nextBtn.addClass('active-btn');
+    });
+    $('.play-btn').click(function(){
+       var currentSlide = $('.active-slide-gear');
+       var nextSlide = $('#play-slide');
+
+       var currentBtn = $('.active-btn');
+       var nextBtn = $('.play-btn');
+       
+       currentSlide.fadeOut(600).removeClass('active-slide-gear');
+       nextSlide.fadeIn(600).addClass('active-slide-gear');
+      
+       currentBtn.removeClass('active-btn');
+       nextBtn.addClass('active-btn');
+    });
+    /* END PREP GEAR */
 
 
     /* NEARBY TRAILS */
@@ -256,7 +282,7 @@ var main = function() {
 function radarSearch(trailhead, placeType, mapContainer){
   /*Create map search for "placeType" around trailhead*/
        var myOptions = {
-        zoom: 15,
+        zoom: 10,
         center: trailhead,
         mapTypeId: google.maps.MapTypeId.ROADMAP
        };
@@ -273,6 +299,12 @@ function radarSearch(trailhead, placeType, mapContainer){
         // throwing too many requests at the server.
         map.addListener('idle', performSearch);
       
+      /* Add trailhead marker */
+      var marker = new google.maps.Marker({
+        position: trailhead,
+        map: map,
+        title: 'Trail Head'
+        });
 
       function performSearch() {
         var request = {
@@ -310,12 +342,55 @@ function radarSearch(trailhead, placeType, mapContainer){
               console.error(status);
               return;
             }
-            infoWindow.setContent(result.name);
-            infoWindow.open(map, marker);
-          });
+
+            var output = distCalc(trailhead, result.name);
+  
+              infoWindow.setContent(result.name + "<br>" + output + "<br>" + result.placeId);
+              infoWindow.open(map, marker);
+            });
         });
       }
 
+}
+
+function distCalc (origin, destination) {
+/* Calc distance between place and trailhead */
+  var service = new google.maps.DistanceMatrixService();
+  service.getDistanceMatrix(
+    {
+      origins: [origin],
+      destinations: [destination],
+      travelMode: google.maps.TravelMode.DRIVING,
+      //transitOptions: TransitOptions,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      durationInTraffic: true,
+      avoidHighways: false,
+      avoidTolls: false,
+    }, callback);
+  function callback(response, status) {
+    // See Parsing the Results for
+    // the basics of a callback function.
+    if (status == google.maps.DistanceMatrixStatus.OK) {
+      var originList = response.originAddresses;
+      var destinationList = response.destinationAddresses;
+  
+      for (var i = 0; i < originList.length; i++) {
+        var results = response.rows[i].elements;
+        for (var j = 0; j < results.length; j++) {
+          var element = results[j];
+          var distance = element.distance.text;
+          var duration = element.duration.text;
+          var from = originList[i];
+          var to = destinationList[j];
+          var output = originList[i] + ' to ' + destinationList[j] +
+            ': ' + results[j].distance.text + ' in ' +
+            results[j].duration.text;
+
+            return output;
+        }
+      }
+    }
+  }
 }
 
 $(document).ready(main);
