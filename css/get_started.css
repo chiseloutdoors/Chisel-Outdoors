@@ -1,3 +1,64 @@
+/* Style sheet for Getting Started parallax page */
+
+body{
+	background:url(../img/Thinkstock/ThinkstockPhotos-480194940.jpg) fixed;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+h1 { 
+    font-family:"Arvo";
+	font-weight:normal;
+	font-size: 55px;
+	text-align: center;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	font-family:"Arvo";
+	font-weight: normal;
+	font-size: 40px;
+	text-align: center;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+p {   
+	font-family: 'Goudy Bookletter 1911', serif;
+	font-weight: normal;
+	font-size: 25px;
+	text-align: left;
+	margin: 50px auto;
+}
+
+li {
+	display: inline-block;
+	font-size: 20px;
+}
+
+.slide a {
+	color: #fff;
+	font-style: none;
+}
+
+
+.center { margin: 0 auto; }
+.content{ margin: 0 auto; width: 960px; }
+.clear { clear: both; }
+a.lpanel { float: left; color: #e1e1e1; font-size: 12px; font-family:"Wellfleet"; text-decoration: none; margin: 7px 11px; }
+a.rpanel { float: right; color: #e1e1e1;  font-size: 12px; font-family:"Wellfleet"; text-decoration: none; margin: 7px 11px; }
+
+a.lpanel:hover{ color: #fff; }
+a.rpanel:hover{ color: #fff; }
+/*= HEADER & NAVIGATION
+--------------------------------------------------------*/
+
 /* Page Nav Bar */
 #nav {
 	position: fixed;
@@ -23,64 +84,139 @@
 }
 /* End Page Nav Bar */
 
-.panel {
-  width: 100%;
-  height: 350px;
-  background: transparent url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/feature-gradient-transparent.png') center center no-repeat;
-  background-size: cover;
-}
 
-#basicPrep{
-	margin-top: 50px;
-}
 
-#basicPrepPic{
-	height: 350px;
-	background-image: url(../img/Thinkstock/ThinkstockPhotos-479765440.jpg);
-	background-size: cover;
-}
-#safety{
-	height: 350px;
-	background-image: url();
-	background-size: cover;
-}
-#packs li{
-	display: inline;
-	margin-left: 70px;
-}
-#packsPic1{
-	height: 350px;
-	background-image: url(../img/Thinkstock/ThinkstockPhotos-87630877.jpg);
-	background-size: cover;
-}
-#packsPic2{
-	height: 350px;
-	background-image: url(../img/Thinkstock/ThinkstockPhotos-87630877.jpg);
-	background-size: cover;	
-}
+/*= QUOTES AND SOME ELEMENTS
+--------------------------------------------------------*/
 
-#toolsPic{
-	height: 350px;
-	background-image: url(../img/Thinkstock/ThinkstockPhotos-100448574.jpg);
-	background-size: cover;
-}
+ .author_name_white { font-family:"Wellfleet";  margin: 70px 0 0 75px; color: #fff; font-size: 20px; }  
+ .author_name_gray { font-family:"Wellfleet";  margin: 70px 0 0 75px; color: #94a4a4; font-size: 20px; }  
+ .quotes_container { width: 800px; margin: 0 auto; }
+#christmas_tree { background: url('../img/christmas-tree.png')no-repeat; width: 48px; height: 77px; margin: 0 auto; position: relative; bottom: -35px;}
+#divider { background: url('../img/divider.png')no-repeat; width: 300px; height: 35px; margin: 0px auto 27px auto; }
+#ribbon { background: url('../img/ribbon.png')no-repeat; width: 251px; height: 48px; margin: 0 auto;  display: block; position: relative; top: -38px; }
+#snowflakes1 { background: url('../img/snowflakes.png')no-repeat; width: 24px; height: 21px; margin: 0 auto;  display: block; position: relative; bottom: -54px; left: -102px; }
+#snowflakes2 { background: url('../img/snowflakes.png')no-repeat; width: 24px; height: 21px; margin: 0 auto;  display: block; position: relative; bottom: -33px;  right: -100px; }
 
-#provisionsPic{
-	height: 350px;
-	background-image: url(..img/Thinkstock/ThinkstockPhotos-486106706.jpg);
-	background-size: cover;
-}
 
-#medKitPic{
-	height: 350px;
-	background-image: url(http://nextadventure.net/images/detailed/4/adventure-medical-kits-adventure-2-first-aid-kit.jpg);
-	background-size: cover;
-}
 
-#lowImpactPic{
-	height: 350px;
-	background-image: url(http://parks.sonomacounty.ca.gov/uploadedImages/Parks/Activities/woman-backpacking-470.jpg);
+/*= SLIDES STYLING
+--------------------------------------------------------*/
+.slide{
+	color: #fff;
+	height: 800px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#basic_prep {
+	background: url(../img/Thinkstock/ThinkstockPhotos-479765440.jpg);
 	background-size: cover;
+	height: 850px;
+	color: #fff;
+	border-bottom: 5px solid #fff;
+	padding-top: 100px;
+	text-align: center;
+}
+#basic_prep h1 {
+	font-size: 150px;
+}
+#basic_prep p {
+	font-size: 40px;
+}
+#basic_prep_text {
+	background-color: #333 50%;
+}
+#safety {
+	padding: 200px;	
+}
+#packs {
+	text-align: center;
+}
+#pack_text {
+	padding-top: 75px;
+}
+#pack_text li {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+#pack_text h1 {
+	margin: 0px;
+}
+#pack_pic1 img{
+	height: 100%;
+	width: 100%;
+	padding-top: 200px;
+	padding-left: 50px;
+}
+#pack_pic2 img{
+	height: 125%;
+	width: 125%;
+	padding-top: 150px;
+	padding-right: 100px;
+}
+#tools_text {
+	padding-top: 125px;
+}
+#tools_text li {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+#tools_pic img{
+	height: 65%;
+	width: 65%;
+	padding-top: 50px;
+}
+#provisions {
+
+}
+#provisions_pic img{
+	height: 100%;
+	width: 100%;
+	padding-top: 150px;
+}
+#provisions_text{
+	padding-top: 150px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+#med_kit_text {
+	padding-top: 50px;
+	text-align: justify;
+}
+#med_kit_text li {
+	display: block;
+}
+#med_kit_pic img{
+	padding-top: 150px;
+	height: 100%;
+	width: 100%;
+}
+#comms_text {
+	padding-top: 75px;
+}
+#comms_text li {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+#comms_pic1 img{
+	height: 75%;
+	width: 75%;
+	padding-top: 25px;
+}
+#comms_pic2 img{
+	height: 115%;
+	width: 115%;
+	padding-top: 200px;
+}
+#low_impact {
+	background: url(../img/Thinkstock/ThinkstockPhotos-481328894.jpg);
+	background-size: cover;
+	color: #333;
+	padding-top: 100px;
+	text-align: justify;
+}
+#low_impact h1 {
+	color: #333;
 }
 
 /* Footer */
@@ -105,4 +241,7 @@
 .footer a {
   color: white;
   font-style: none;
+}
+.footer h6 {
+	font-size: 10px;
 }

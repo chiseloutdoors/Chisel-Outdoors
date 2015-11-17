@@ -129,14 +129,9 @@ h3 {
 /* End Trail Info */
 
 /* Prep Map */
-#prepMap {
+.prepMap {
   height: 500px;
-  width: 80vh;
-  width: 100%;
-  max-width: 1920px;
-  margin-top: 0em;
-  position: relative;
-  margin-top: 50px;
+
 }
 .active-slide-map {
     display: block;
@@ -238,9 +233,9 @@ h3 {
 #clothes-slide{
 	height: 500px;
 }
-#promotedClothes{
-	background-image: url(../img/Promotions/Chacos.jpg);
-	background-size: cover;
+#promotedClothes img{
+	padding-top: 100px;
+	width: 140%;
 }
 /* End Clothes Slide */
 

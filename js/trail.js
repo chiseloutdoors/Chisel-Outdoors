@@ -4,6 +4,7 @@ var placeType = ''; /*search keywords for radar search*/
 var mapContainer = ''; /*where to place map in html*/
 
 
+
 var main = function() {
 
     /* TRAIL NAV */
@@ -21,7 +22,7 @@ var main = function() {
 
     $('.camp-btn').click(function(){
        /*Map Search*/
-       radarSearch(trailhead, 'camp_ground', "map_canvas");
+       radarSearch(trailhead, 'camp_ground', "trail_map_canvas");
     });
 
     $('.water-btn').click(function(){
@@ -52,26 +53,16 @@ var main = function() {
 
     /* PREP MAP NAV */
     $('.services-btn').click(function(){
-       var currentSlide = $('.active-slide-prep');
-       var nextSlide = $('#services-slide');
-       
-       currentSlide.fadeOut(600).removeClass('active-slide-prep');
-       nextSlide.fadeIn(600).addClass('active-slide-prep');
-
        var currentBtn = $('.active-btn');
        var nextBtn = $('.services-btn');
 
        currentBtn.removeClass('active-btn');
        nextBtn.addClass('active-btn');
+
+       radarSearch(trailhead, 'shop', "Prep_Map_Canvas")
     });
 
     $('.food-btn').click(function(){
-       var currentSlide = $('.active-slide-map');
-       var nextSlide = $('#food-slide');
-       
-       currentSlide.fadeOut(600).removeClass('active-slide-map');
-       nextSlide.fadeIn(600).addClass('active-slide-map');
-
        var currentBtn = $('.active-btn');
        var nextBtn = $('.food-btn');
 
@@ -79,17 +70,11 @@ var main = function() {
        nextBtn.addClass('active-btn');
 
        /*Map Search*/
-       radarSearch(trailhead, 'food|restaurant', "food-slide");
+       radarSearch(trailhead, 'food|restaurant', "Prep_Map_Canvas");
     });
 
     /* Pubs */
     $('.pubs-btn').click(function(){
-       var currentSlide = $('.active-slide-map');
-       var nextSlide = $('#pubs-slide');
-       
-       currentSlide.fadeOut(600).removeClass('active-slide-map');
-       nextSlide.fadeIn(600).addClass('active-slide-map');
-
        var currentBtn = $('.active-btn');
        var nextBtn = $('.pubs-btn');
 
@@ -97,18 +82,12 @@ var main = function() {
        nextBtn.addClass('active-btn');
 
        /*Map Search*/
-       radarSearch(trailhead, 'bar', "pubs-slide");
+       radarSearch(trailhead, 'bar', "Prep_Map_Canvas");
     });
 
 
     /* Accomodations */
     $('.accomodations-btn').click(function(){
-       var currentSlide = $('.active-slide-map');
-       var nextSlide = $('#accomodations-slide');
-       
-       currentSlide.fadeOut(600).removeClass('active-slide-map');
-       nextSlide.fadeIn(600).addClass('active-slide-map');
-
        var currentBtn = $('.active-btn');
        var nextBtn = $('.accomodations-btn');
 
@@ -116,17 +95,11 @@ var main = function() {
        nextBtn.addClass('active-btn');
 
        /*Map Search*/
-       radarSearch(trailhead, 'lodging|rv_park', "accomodations-slide");
+       radarSearch(trailhead, 'lodging|rv_park', "Prep_Map_Canvas");
     });
 
     /* Transportation */
     $('.transport-btn').click(function(){
-       var currentSlide = $('.active-slide-map');
-       var nextSlide = $('#transport-slide');
-       
-       currentSlide.fadeOut(600).removeClass('active-slide-map');
-       nextSlide.fadeIn(600).addClass('active-slide-map');
-
        var currentBtn = $('.active-btn');
        var nextBtn = $('.transport-btn');
 
@@ -134,17 +107,11 @@ var main = function() {
        nextBtn.addClass('active-btn');
 
        /*Map Search*/
-       radarSearch(trailhead, 'parking|gas_station', "transport-slide");
+       radarSearch(trailhead, 'parking|gas_station', "Prep_Map_Canvas");
     });
 
     /* Airfare */
     $('.airfare-btn').click(function(){
-       var currentSlide = $('.active-slide-map');
-       var nextSlide = $('#airfare-slide');
-       
-       currentSlide.fadeOut(600).removeClass('active-slide-map');
-       nextSlide.fadeIn(600).addClass('active-slide-map');
-
        var currentBtn = $('.active-btn');
        var nextBtn = $('.airfare-btn');
 
@@ -152,7 +119,7 @@ var main = function() {
        nextBtn.addClass('active-btn');
 
        /*Map Search*/
-       radarSearch(trailhead, 'airport', "airfare-slide");
+       radarSearch(trailhead, 'airport', "Prep_Map_Canvas");
     });
     /* End Prep MAP Nav and Slides */
 
@@ -342,10 +309,8 @@ function radarSearch(trailhead, placeType, mapContainer){
               console.error(status);
               return;
             }
-
-            var output = distCalc(trailhead, result.name);
   
-              infoWindow.setContent(result.name + "<br>" + output + "<br>" + result.placeId);
+              infoWindow.setContent(result.name + "<br>" + result.formatted_address + "<br>" + result.formatted_phone_number + "<br>" + result.rating + "<br>" + result.url);
               infoWindow.open(map, marker);
             });
         });

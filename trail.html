@@ -32,19 +32,7 @@
 				lon: -113.641, 
 				title: "Snow Canyon State Park", 
 				description: "Brighton Palace Pier dates to 1899"
-			}/*,
-			{
-				lat: 50.822638, 
-				lon: -0.137361, 
-				title: "Brighton Pavilion", 
-				description: "The Pavilion was built for the Prince of Wales in 1787"
-			},
-			{
-				lat: 50.821226, 
-				lon: -0.139372, 
-				title: "English's", 
-				description: "English's Seafood Restaurant and Oyster Bar"
-			}*/
+			}
 		];
 		
 
@@ -54,7 +42,7 @@
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 		
-		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+		var map = new google.maps.Map(document.getElementById("trail_map_canvas"), myOptions);
 		
 		var infowindow =  new google.maps.InfoWindow({
 			content: ''
@@ -81,6 +69,11 @@
 	} 
 	google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
+
+	<!-- Pre-load Prep map -->
+	<!-- <script type="text/javascript">
+		radarSearch(trailhead, 'shop', "Prep_Map_Canvas");
+	</script> -->
 </head>
 <body>
 
@@ -88,7 +81,7 @@
 	<div id="nav">
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<a class="navbar-brand" href="/home">Chisel</a>
+				<a class="navbar-brand" href="index.html">Chisel</a>
 			</ul>
 			<a class="navbar-brand navbar-center" href="#">Trail Name at Snow Canyon State Park</a>
 			<ul class="nav navbar-nav navbar-right">
@@ -103,7 +96,7 @@
 	<!--Trail Map Section-->
 	<div id="trailMap">
 		<div class="section" style="height:500px;">
-			<div id="map_canvas" style="width:100%;height:100%;">
+			<div id="trail_map_canvas" style="width:100%;height:100%;">
 			</div>
 		</div>
 	</div>
@@ -171,49 +164,12 @@
 
 
 	<!-- Preperation Map -->
-	<div class="prepMap" id="prepMap">
-      	<!-- Services Slide -->
-      	<div class="panel active-slide-map" id="services-slide">
-        	<div class="container">
-              <h1>Recreation Shops</h1>
-          	</div>
-      	</div>
-
-      	<!-- Food Slide -->
-      	<div class="panel" id="food-slide">
-        	<div class="container">
-              <h1>Food</h1>
-          	</div>
-      	</div>
-
-      	<!-- Pubs Slide -->
-      	<div class="panel" id="pubs-slide">
-        	<div class="container">
-              <h1>Pubs</h1>
-          	</div>
-      	</div>
-
-      	<!-- Accomodations Slide -->
-      	<div class="panel" id="accomodations-slide">
-        	<div class="container">
-              <h1>Accomodations</h1>
-          	</div>
-      	</div>
-
-      	<!-- Transport Slide -->
-      	<div class="panel" id="transport-slide">
-        	<div class="container">
-              <h1>Transport</h1>
-          	</div>
-      	</div>
-
-      	<!-- Airfare Slide -->
-      	<div class="panel" id="airfare-slide">
-        	<div class="container">
-              <h1>Airfare</h1>
-          	</div>
-      	</div>
-	</div>
+	<div class="prepMap" id="">
+      	<div class="section" style="height:500px;">
+			<div id="Prep_Map_Canvas" style="width:100%;height:100%;">
+			</div>
+		</div>
+    </div>
 	<!-- End Preperation Map -->
 
 	<!-- Prep Map Nav -->
@@ -242,7 +198,7 @@
         	<div class="container">
               <div class="col-md-4" id="recommendClothes">
               	<h3>Recommended</h3>
-              	<ul>
+              	<ul> 
               		<li>Any shirt</li>
               		<li>Vented Pants</li>
               		<li>Any footwear</li>
@@ -258,6 +214,7 @@
         	  </div>
         	  <a href="#">
         	  	<div class="col-md-4" id="promotedClothes">
+        	  		<a href=""><img src="https://cdn.shopify.com/s/files/1/0121/3322/files/email-chaco_grande.png?101612"></a>
         	  	</div>
         	  </a>
           	</div>
@@ -266,7 +223,27 @@
       	<!-- Equipment Slide -->
       	<div class="panel" id="pack-slide">
         	<div class="container">
-              <h1>Pack</h1>
+        		<div class="row">
+        			<div class="col-md-4" id="recommend_pack">
+	    	            <h1>Pack</h1>
+		              	<ul>
+		              		<li>Size - 30L+</li>
+		              		<li>Rain Cover</li>
+		              		<li>Waist Belt</li>
+		              	</ul>
+		            </div>
+		            <div class="col-md-4" id="shop_pack">
+		            	<h3>Find at....</h3>
+		              	<ul>
+		              		<li><a href="#">REI</a></li>
+		              		<li><a href="#">Active Junky</a></li>
+		              		<li><a href="#">Backcountry</a></li>
+		              	</ul>
+		            </div>
+		            <div class="col-md-4" id="sponsored_pack">
+		            	<img src="http://schwarttzy.com/wp-content/uploads/2011/07/ambush.jpg">
+		            </div>
+		      	</div>
           	</div>
       	</div>
 
