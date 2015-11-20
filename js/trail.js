@@ -20,12 +20,7 @@ var main = function() {
        
     });
 
-    $('.camp-btn').click(function(){
-       /*Map Search*/
-       radarSearch(trailhead, 'camp_ground', "trail_map_canvas");
-    });
-
-    $('.water-btn').click(function(){
+    $('.amenities-btn').click(function(){
        
     });
 
@@ -37,14 +32,6 @@ var main = function() {
        
     });
 
-    $('.hazards-btn').click(function(){
-       
-    });
-
-    $('.activities-btn').click(function(){
-       
-    });
-
     $('.distance-btn').click(function(){
        
     });
@@ -53,16 +40,27 @@ var main = function() {
 
     /* PREP MAP NAV */
     $('.services-btn').click(function(){
+      var currentSlide = $('.active-slide-map');
+       var nextSlide = $('#rec_shop_slide');
+
        var currentBtn = $('.active-btn');
        var nextBtn = $('.services-btn');
+
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
 
        currentBtn.removeClass('active-btn');
        nextBtn.addClass('active-btn');
 
-       radarSearch(trailhead, 'shop', "Prep_Map_Canvas")
+       radarSearch(trailhead, 'shop', "rec_shop_map")
     });
 
     $('.food-btn').click(function(){
+       var currentSlide = $('.active-slide-map');
+       var nextSlide = $('#food_slide');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
+
        var currentBtn = $('.active-btn');
        var nextBtn = $('.food-btn');
 
@@ -70,11 +68,16 @@ var main = function() {
        nextBtn.addClass('active-btn');
 
        /*Map Search*/
-       radarSearch(trailhead, 'food|restaurant', "Prep_Map_Canvas");
+       radarSearch(trailhead, 'food|restaurant', "food_map");
     });
 
     /* Pubs */
     $('.pubs-btn').click(function(){
+      var currentSlide = $('.active-slide-map');
+       var nextSlide = $('#pubs_slide');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
+
        var currentBtn = $('.active-btn');
        var nextBtn = $('.pubs-btn');
 
@@ -82,12 +85,17 @@ var main = function() {
        nextBtn.addClass('active-btn');
 
        /*Map Search*/
-       radarSearch(trailhead, 'bar', "Prep_Map_Canvas");
+       radarSearch(trailhead, 'bar', "pub_map");
     });
 
 
     /* Accomodations */
     $('.accomodations-btn').click(function(){
+      var currentSlide = $('.active-slide-map');
+       var nextSlide = $('#accomodations_slide');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
+
        var currentBtn = $('.active-btn');
        var nextBtn = $('.accomodations-btn');
 
@@ -95,11 +103,16 @@ var main = function() {
        nextBtn.addClass('active-btn');
 
        /*Map Search*/
-       radarSearch(trailhead, 'lodging|rv_park', "Prep_Map_Canvas");
+       radarSearch(trailhead, 'lodging', "accomodations_map");
     });
 
     /* Transportation */
     $('.transport-btn').click(function(){
+      var currentSlide = $('.active-slide-map');
+       var nextSlide = $('#gas_slide');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
+
        var currentBtn = $('.active-btn');
        var nextBtn = $('.transport-btn');
 
@@ -107,11 +120,16 @@ var main = function() {
        nextBtn.addClass('active-btn');
 
        /*Map Search*/
-       radarSearch(trailhead, 'parking|gas_station', "Prep_Map_Canvas");
+       radarSearch(trailhead, 'parking|gas_station', "gas_map");
     });
 
-    /* Airfare */
-    $('.airfare-btn').click(function(){
+    /* Airport */
+      $('.airfare-btn').click(function(){
+       var currentSlide = $('.active-slide-map');
+       var nextSlide = $('#airport_slide');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
+
        var currentBtn = $('.active-btn');
        var nextBtn = $('.airfare-btn');
 
@@ -119,12 +137,46 @@ var main = function() {
        nextBtn.addClass('active-btn');
 
        /*Map Search*/
-       radarSearch(trailhead, 'airport', "Prep_Map_Canvas");
+       radarSearch(trailhead, 'airport', "airport_map");
+    });
+
+      /* Camp & RVs */
+      $('.camp-btn').click(function(){
+       var currentSlide = $('.active-slide-map');
+       var nextSlide = $('#camp_slide');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
+
+       var currentBtn = $('.active-btn');
+       var nextBtn = $('.camp-btn');
+
+       currentBtn.removeClass('active-btn');
+       nextBtn.addClass('active-btn');
+
+       /*Map Search*/
+       radarSearch(trailhead, 'campground|rv_park', "camp_map");
+    });
+
+      /* Amenities */
+      $('.amenities-btn').click(function(){
+       var currentSlide = $('.active-slide-map');
+       var nextSlide = $('#amenities_slide');
+       currentSlide.fadeOut(600).removeClass('active-slide-map');
+       nextSlide.fadeIn(600).addClass('active-slide-map');
+
+       var currentBtn = $('.active-btn');
+       var nextBtn = $('.amenities-btn');
+
+       currentBtn.removeClass('active-btn');
+       nextBtn.addClass('active-btn');
+
+       /*Map Search*/
+       radarSearch(trailhead, 'laundry', "amenities_map");
     });
     /* End Prep MAP Nav and Slides */
 
     /* PREP GEAR */
-        $('.clothes-btn').click(function(){
+       $('.clothes-btn').click(function(){
        var currentSlide = $('.active-slide-gear');
        var nextSlide = $('#clothes-slide');
 
@@ -248,23 +300,24 @@ var main = function() {
 
 function radarSearch(trailhead, placeType, mapContainer){
   /*Create map search for "placeType" around trailhead*/
-       var myOptions = {
+    var myOptions = {
         zoom: 10,
         center: trailhead,
         mapTypeId: google.maps.MapTypeId.ROADMAP
        };
        
-       /*Set search map into corresponding slide*/ 
-      var map = new google.maps.Map(document.getElementById(mapContainer), myOptions);
+      /*Set search map into corresponding slide*/ 
+      var map = new google.maps.Map(document.getElementById(mapContainer), 
+        myOptions);
 
-       /*"infoWindow" handles info of places returned from search*/
-        infoWindow = new google.maps.InfoWindow();
-        /*"Service" handles radar search results to find places*/
-        service = new google.maps.places.PlacesService(map);
+      /*"infoWindow" handles info of places returned from search*/
+      infoWindow = new google.maps.InfoWindow();
+      /*"Service" handles radar search results to find places*/
+      service = new google.maps.places.PlacesService(map);
 
-        // The idle event is a debounced event, so we can query & listen without
-        // throwing too many requests at the server.
-        map.addListener('idle', performSearch);
+      // The idle event is a debounced event, so we can query & listen without
+      // throwing too many requests at the server.
+      map.addListener('idle', performSearch);
       
       /* Add trailhead marker */
       var marker = new google.maps.Marker({
@@ -292,6 +345,7 @@ function radarSearch(trailhead, placeType, mapContainer){
         }
       }
       
+      //Add marker (dot) for each 
       function addMarker(place) {
         var marker = new google.maps.Marker({
           map: map,
@@ -303,6 +357,7 @@ function radarSearch(trailhead, placeType, mapContainer){
           }
         });
       
+        //Handle click event for results
         google.maps.event.addListener(marker, 'click', function() {
           service.getDetails(place, function(result, status) {
             if (status !== google.maps.places.PlacesServiceStatus.OK) {

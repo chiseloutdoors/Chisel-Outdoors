@@ -21,59 +21,30 @@
 	<script src="bower_components/bootstrap/js/collapse.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/d3.v3.min.js"></script>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	
+	<script src="js/trail.js"></script>
 	<script type="text/javascript">
-	function initialize() {
-		var trailhead = {lat: 37.203467, lng: -113.638454};
-		var i;
-		var arrDestinations = [
-			{
-				lat: 37.203467, 
-				lon: -113.641, 
-				title: "Snow Canyon State Park", 
-				description: "Brighton Palace Pier dates to 1899"
-			}
-		];
-		
 
-		var myOptions = {
-			zoom: 15,
-			center: trailhead,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-		
-		var map = new google.maps.Map(document.getElementById("trail_map_canvas"), myOptions);
-		
-		var infowindow =  new google.maps.InfoWindow({
-			content: ''
-		});
-		
-		// loop over our array
-		for (i = 0; i < arrDestinations.length; i++) {
-			// create a marker
-			var marker = new google.maps.Marker({
-				title: arrDestinations[i].title,
-				position: new google.maps.LatLng(arrDestinations[i].lat, arrDestinations[i].lon),
-				map: map
-			});
-			
-			// add an event listener for this marker
-			bindInfoWindow(marker, map, infowindow, "<p>" + arrDestinations[i].description + "</p>");  
+		function initMap() {
+			var trailhead = {lat: 37.203467, lng: -113.641};
+			var map;
+
+  			map = new google.maps.Map(document.getElementById('trail_map_canvas'), {
+			    center: trailhead,
+    			zoom: 15
+  			});
+
+  			/* Add trailhead marker */
+	    	var marker = new google.maps.Marker({
+        	position: trailhead,
+        	map: map,
+        	title: 'Trail Head'
+        	});
 		}
-	}
-	function bindInfoWindow(marker, map, infowindow, html) { 
-		google.maps.event.addListener(marker, 'click', function() { 
-			infowindow.setContent(html); 
-			infowindow.open(map, marker); 
-		}); 
-	} 
-	google.maps.event.addDomListener(window, 'load', initialize);
+
 	</script>
 
-	<!-- Pre-load Prep map -->
-	<!-- <script type="text/javascript">
-		radarSearch(trailhead, 'shop', "Prep_Map_Canvas");
-	</script> -->
+	
 </head>
 <body>
 
@@ -112,10 +83,6 @@
 			<span title="Toggle Distance Calc"><li><img class="distance-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/map4.png"></li></span>
 			<li>|</li>
 			<span title="Forecast"><li><img class="forecast-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/cloud310.png"></li></span>
-			<li>|</li>
-			<span title="Camp Sites"><li><img class="camp-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/camping14.png"></li></span>
-			<li>|</li>
-			<span title="Water Sources"><li><img class="water-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/shower14.png"></li></span>
 			<li>|</li>
 			<!-- Incorporate at later time....
 			<span title="Community Photos"><li><img class="community-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/two361.png"></li></span>
@@ -162,15 +129,58 @@
 	</div>
 	<!-- End Trail Info -->
 
+	<!-- NEW PREP MAP -->
+	<div class="" id="prep_map">
+      	<!-- Rec Shop Slide -->
+      	<div class="panel active-slide-map" id="rec_shop_slide">
+        	<div class="container" id="rec_shop_map">
+          	</div>
+      	</div>
 
-	<!-- Preperation Map -->
-	<div class="prepMap" id="">
-      	<div class="section" style="height:500px;">
-			<div id="Prep_Map_Canvas" style="width:100%;height:100%;">
-			</div>
-		</div>
-    </div>
-	<!-- End Preperation Map -->
+      	<!-- Food Slide -->
+      	<div class="panel" id="food_slide">
+        	<div class="container" id="food_map">
+          	</div>
+      	</div>
+
+      	<!-- Pubs Slide -->
+      	<div class="panel" id="pubs_slide">
+        	<div class="container" id="pub_map">
+          	</div>
+      	</div>
+
+      	<!-- Accomodations Slide -->
+      	<div class="panel" id="accomodations_slide">
+        	<div class="container" id="accomodations_map">
+           	</div>
+      	</div>
+
+      	<!-- Park & Gas Slide -->
+      	<div class="panel" id="gas_slide">
+        	<div class="container" id="gas_map">
+          	</div>
+      	</div>
+
+		<!-- Airport -->
+      	<div class="panel" id="airport_slide">
+        	<div class="container" id="airport_map">
+          	</div>
+      	</div>
+
+      	<!-- Camp and RVs -->
+      	<div class="panel" id="camp_slide">
+        	<div class="container" id="camp_map">
+          	</div>
+      	</div>
+
+      	<!-- Ammenities -->
+      	<div class="panel" id="amenities_slide">
+        	<div class="container" id="amenities_map">
+          	</div>
+      	</div>
+	</div>
+	<!-- End New Prep Map -->
+
 
 	<!-- Prep Map Nav -->
 	<div class="prepMap-nav" id="prepMapnav">
@@ -187,12 +197,17 @@
 			<li>|</li>
 			<span title="Airfare"><li><img class="airfare-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/sky8.png"></li></span>
 			<li>|</li>
+			<span title="Camp & RV"><li><img class="camp-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/camping14.png"></li></span>
+			<li>|</li>
+			<span title="Amenities"><li><img class="amenities-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/shower14.png"></li></span>
+			<li>|</li>
 		</ul>
 	</div>
 	<!-- End Prep Map Nav -->
 
+
 	<!-- Gear Prep-->
-	<div id="prepGear" class="prepGear">
+	<div class="prepGear" id="prepGear">
       	<!-- Clothes Slide -->
 		<div class="panel active-slide-gear" id="clothes-slide">
         	<div class="container">
@@ -373,8 +388,9 @@
 	<!--End Footer-->
 
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/trail.js"></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+    
+    <!-- Google Maps js API --> 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9HruWNEZUBfdIyuBEehLKI0whMeX_bAQ&callback=initMap&signed_in=true&libraries=places,visualization" async defer></script>
 
 </body>

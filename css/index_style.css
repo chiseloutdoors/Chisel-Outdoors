@@ -24,6 +24,8 @@ h1, p {
 }
 
 .btn {
+  width: 400px;
+  display: block;
   background-color: #333;
   color: #fff;
   font-weight: 600;
@@ -32,6 +34,8 @@ h1, p {
   padding: 16px 40px;
   text-decoration: none;
   text-transform: uppercase;
+  margin-bottom: 25px;
+  margin-left: 275px;
 }
 
 /* Welcome Section */
@@ -42,10 +46,12 @@ h1, p {
 	background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/highlight_photos/DSC00104.JPG);
   background-size: cover;
 }
-
 .welcome h1 {
   font-size: 100px;
-  margin-top: 250px;
+  margin-top: 200px;
+}
+.welcome p {
+  font-size: 25px;
 }
 
 /* Quick Search Section */
@@ -85,9 +91,15 @@ h1, p {
 }
 
 .intro_vid h1 {
+  width: 600px;
   font-size: 100px;
   margin-top: 200px;
   background:rgba(51, 51, 51, 0.4);
+  margin-left: 175px;
+}
+#intro_vid_btn {
+  width: 200px;
+  margin-left: 350px;
 }
 
 /* Highlights Section */
@@ -136,20 +148,35 @@ h1, p {
   text-align: center;
   height: 500px;
   margin-left: 60px;
-  background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/highlight_photos/DSC00077.JPG);
+  background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/Thinkstock/ThinkstockPhotos-468747035.jpg);
   background-size: cover;
+  color: #fff;
+}
+#start h2{
+  padding-top: 150px;
+  font-size: 50px;
 }
 #family {
   text-align: center;
   height: 500px;
-  background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/highlight_photos/DSC00114.JPG);
+  background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/Thinkstock/ThinkstockPhotos-473422218.jpg);
   background-size: cover;
+  color: #fff;
+}
+#family h2{
+  padding-top: 150px;
+  font-size: 50px;
 }
 #team {
   text-align: center;
   height: 500px;
   background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/highlight_photos/DSC00114.JPG);
   background-size: cover;
+  color: #fff;
+}
+#team h2{
+  padding-top: 150px;
+  font-size: 50px;
 }
 /* End Community Section */
 

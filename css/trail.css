@@ -19,11 +19,13 @@ h3 {
   background-size: cover;
   display: none;
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
 }
+.container {
+	height: 500px;
+	width: 100%
+} 
 
 
 /* Page Nav Bar */
@@ -129,10 +131,16 @@ h3 {
 /* End Trail Info */
 
 /* Prep Map */
-.prepMap {
-  height: 500px;
-
+#prep_map {
+	height: 500px;
+  width: 80vh;
+  width: 100%;
+  max-width: 1920px;
+  margin-top: 0em;
+  position: relative;
+  margin-top: 50px;
 }
+
 .active-slide-map {
     display: block;
 }
@@ -215,7 +223,6 @@ h3 {
 .active-slide-gear {
     display: block;
 }
-
 
 .active-slide-nearby {
     display: block;
