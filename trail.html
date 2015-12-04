@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" ng-app="mainRouter">
 <head>
+	<!-- Weather API Key 1088269cadd02d84dba9b274fc7bc097 -->
+
 	<title>Trails</title>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +24,7 @@
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/d3.v3.min.js"></script>
 	
-	<script src="js/trail.js"></script>
+	w
 	<script type="text/javascript">
 
 		function initMap() {
@@ -42,6 +44,9 @@
         	});
 		}
 
+	</script>
+	<script type="text/javascript">
+		var forecast = JSON.parse(api.openweathermap.org/data/2.5/forecast?lat=37.203467&lon=-113.641&APPID=1088269cadd02d84dba9b274fc7bc097);
 	</script>
 
 	
@@ -78,14 +83,14 @@
 	<div id="trailnav">
 		<ul>
 			<li>|</li>
-			<span title="Toggle photos"><li><img class="photos-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/photo147.png"></span></li>
+			<span title="Toggle photos"><li><img class="photos-btn" alt="photos-icon" src="img/flaticon/png/photo147.png"></span></li>
 			<li>|</li>
-			<span title="Toggle Distance Calc"><li><img class="distance-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/map4.png"></li></span>
+			<span title="Toggle Distance Calc"><li><img class="distance-btn" alt="distance-icon" src="img/flaticon/png/map4.png"></li></span>
 			<li>|</li>
-			<span title="Forecast"><li><img class="forecast-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/cloud310.png"></li></span>
+			<span title="Forecast"><li><img class="forecast-btn" alt="forecast-icon" src="img/flaticon/png/cloud310.png"></li></span>
 			<li>|</li>
 			<!-- Incorporate at later time....
-			<span title="Community Photos"><li><img class="community-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/two361.png"></li></span>
+			<span title="Community Photos"><li><img class="community-btn" src="../img/flaticon/png/two361.png"></li></span>
 			<li>|</li>
 			-->
 		</ul>
@@ -185,21 +190,22 @@
 	<!-- Prep Map Nav -->
 	<div class="prepMap-nav" id="prepMapnav">
 		<ul>
-			<span title="Recreation Shops"><li><img class="services-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/bike30.png"></li></span>
 			<li>|</li>
-			<span title="Food"><li><img class="food-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/hamburger14.png"></li></span>
+			<span title="Recreation Shops"><li><img class="services-btn" alt="rec-shops-icon" src="img/flaticon/png/bike30.png"></li></span>
 			<li>|</li>
-			<span title="Pubs"><li><img class="pubs-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/drink24.png"></li></span>
+			<span title="Food"><li><img class="food-btn" alt="food-icon" src="img/flaticon/png/hamburger14.png"></li></span>
 			<li>|</li>
-			<span title="Accomodations"><li><img class="accomodations-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/stars10.png"></li></span>
+			<span title="Pubs"><li><img class="pubs-btn" alt="pub-icon" src="img/flaticon/png/drink24.png"></li></span>
 			<li>|</li>
-			<span title="Gas and Parking"><li><img class="transport-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/public-transport4.png"></li></span>
+			<span title="Accomodations"><li><img class="accomodations-btn" alt="accomodate-icon" src="img/flaticon/png/stars10.png"></li></span>
 			<li>|</li>
-			<span title="Airfare"><li><img class="airfare-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/sky8.png"></li></span>
+			<span title="Gas and Parking"><li><img class="transport-btn" alt="gas-icon" src="img/flaticon/png/public-transport4.png"></li></span>
 			<li>|</li>
-			<span title="Camp & RV"><li><img class="camp-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/camping14.png"></li></span>
+			<span title="Airfare"><li><img class="airfare-btn" alt="airport-icon" src="img/flaticon/png/sky8.png"></li></span>
 			<li>|</li>
-			<span title="Amenities"><li><img class="amenities-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/shower14.png"></li></span>
+			<span title="Camp & RV"><li><img class="camp-btn" alt="camp-icon" src="img/flaticon/png/camping14.png"></li></span>
+			<li>|</li>
+			<span title="Amenities"><li><img class="amenities-btn" alt="amenities-icon" src="img/flaticon/png/shower14.png"></li></span>
 			<li>|</li>
 		</ul>
 	</div>
@@ -207,11 +213,11 @@
 
 
 	<!-- Gear Prep-->
-	<div class="prepGear" id="prepGear">
+	<div class="prepGear" id="prep_gear">
       	<!-- Clothes Slide -->
 		<div class="panel active-slide-gear" id="clothes-slide">
         	<div class="container">
-              <div class="col-md-4" id="recommendClothes">
+              <div class="col-md-4" id="recommend_clothes">
               	<h3>Recommended</h3>
               	<ul> 
               		<li>Any shirt</li>
@@ -219,7 +225,7 @@
               		<li>Any footwear</li>
               	</ul>
         	  </div>
-        	  <div class="col-md-4" id="shopClothes">
+        	  <div class="col-md-4" id="shop_clothes">
               	<h3>Find at....</h3>
               	<ul>
               		<li><a href="#">REI</a></li>
@@ -228,7 +234,7 @@
               	</ul>
         	  </div>
         	  <a href="#">
-        	  	<div class="col-md-4" id="promotedClothes">
+        	  	<div class="col-md-4" id="promoted_clothes">
         	  		<a href=""><img src="https://cdn.shopify.com/s/files/1/0121/3322/files/email-chaco_grande.png?101612"></a>
         	  	</div>
         	  </a>
@@ -240,7 +246,7 @@
         	<div class="container">
         		<div class="row">
         			<div class="col-md-4" id="recommend_pack">
-	    	            <h1>Pack</h1>
+	    	            <h3>Recommended</h3>
 		              	<ul>
 		              		<li>Size - 30L+</li>
 		              		<li>Rain Cover</li>
@@ -255,7 +261,7 @@
 		              		<li><a href="#">Backcountry</a></li>
 		              	</ul>
 		            </div>
-		            <div class="col-md-4" id="sponsored_pack">
+		            <div class="col-md-4" id="promoted_pack">
 		            	<img src="http://schwarttzy.com/wp-content/uploads/2011/07/ambush.jpg">
 		            </div>
 		      	</div>
@@ -265,28 +271,108 @@
       	<!-- Sleep Slide -->
       	<div class="panel" id="sleep-slide">
         	<div class="container">
-              <h1>Sleep Gear</h1>
+        		<div class="col-md-4" id="recommend_sleep">
+              	<h3>Recommended</h3>
+              	<ul> 
+              		<li>Light tent to block wind</li>
+              		<li>Air Pad</li>
+              		<li>Light Sleeping Bag</li>
+              	</ul>
+        	  </div>
+        	  <div class="col-md-4" id="shop_sleep">
+              	<h3>Find at....</h3>
+              	<ul>
+              		<li><a href="#">REI</a></li>
+              		<li><a href="#">Active Junky</a></li>
+              		<li><a href="#">Backcountry</a></li>
+              	</ul>
+        	  </div>
+        	  <a href="#">
+        	  	<div class="col-md-4" id="promoted_sleep">
+        	  		<a href=""><img src="http://www.sportsmanswarehouse.com/img/products/original/mountain_hardwear_lamina_35_degree_sleeping_bag_1309938_1_og.jpg"></a>
+        	  	</div>
+        	  </a>
           	</div>
       	</div>
 
       	<!-- Food & Water Slide -->
-      	<div class="panel" id="foodWater-slide">
+      	<div class="panel" id="food-slide">
         	<div class="container">
-              <h1>Food and Water</h1>
+              <div class="col-md-4" id="recommend_food">
+              	<h3>Recommended</h3>
+              	<ul> 
+              		<li>Granola Bars</li>
+              		<li>Fill up at the park amenities</li>
+              		<li>1 Liter per person per hour</li>
+              	</ul>
+        	  </div>
+        	  <div class="col-md-4" id="shop_food">
+              	<h3>Find at....</h3>
+              	<ul>
+              		<li><a href="#">REI</a></li>
+              		<li><a href="#">Active Junky</a></li>
+              		<li><a href="#">Backcountry</a></li>
+              	</ul>
+        	  </div>
+        	  <a href="#">
+        	  	<div class="col-md-4" id="promoted_food">
+        	  		<a href=""><img src="http://www.madeinoregon.com/images/Z/arctic-white-stainless-s-23169-600z.jpg"></a>
+        	  	</div>
+        	  </a>
           	</div>
       	</div>
 
       	<!-- Safety Slide -->
       	<div class="panel" id="safety-slide">
         	<div class="container">
-              <h1>Safety Gear</h1>
+              <div class="col-md-4" id="recommend_safety">
+              	<h3>Recommended</h3>
+              	<ul> 
+              		<li>Sunscreen</li>
+              		<li>Good cell signal</li>
+              		<li>Beware snakes</li>
+              	</ul>
+        	  </div>
+        	  <div class="col-md-4" id="shop_safety">
+              	<h3>Find at....</h3>
+              	<ul>
+              		<li><a href="#">REI</a></li>
+              		<li><a href="#">Active Junky</a></li>
+              		<li><a href="#">Backcountry</a></li>
+              	</ul>
+        	  </div>
+        	  <a href="#">
+        	  	<div class="col-md-4" id="promoted_safety">
+        	  		<a href=""><img src="http://images.forbes.com/media/lists/companies/att_416x416.jpg"></a>
+        	  	</div>
+        	  </a>
           	</div>
       	</div>
 
       	<!-- Play Slide -->
       	<div class="panel" id="play-slide">
         	<div class="container">
-              <h1>Just of fun</h1>
+              <div class="col-md-4" id="recommend_play">
+              	<h3>Recommended</h3>
+              	<ul> 
+              		<li>Frisbee</li>
+              		<li>Water Guns</li>
+              		<li>Lazer Pointer for stargazing</li>
+              	</ul>
+        	  </div>
+        	  <div class="col-md-4" id="shop_play">
+              	<h3>Find at....</h3>
+              	<ul>
+              		<li><a href="#">REI</a></li>
+              		<li><a href="#">Active Junky</a></li>
+              		<li><a href="#">Backcountry</a></li>
+              	</ul>
+        	  </div>
+        	  <a href="#">
+        	  	<div class="col-md-4" id="promoted_play">
+        	  		<a href=""><img src="http://g02.a.alicdn.com/kf/HTB1yty2JXXXXXbcaXXXq6xXFXXXm.jpg"></a>
+        	  	</div>
+        	  </a>
           	</div>
       	</div>
 	</div>
@@ -296,19 +382,18 @@
 	<div class="prepGear-nav" id="prepGearnav">
 		<ul>
 			<li>|</li>
-			<span title="Clothes"><li><img class="clothes-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/tshirt18.png"></li></span>
+			<span title="Clothes"><li><img class="clothes-btn" alt="clothes-icon" src="img/flaticon/png/tshirt18.png"></li></span>
 			<li>|</li>
-			<span title="Pack"><li><img class="pack-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/traveler.png"></span>
+			<span title="Pack"><li><img class="pack-btn" alt="pack-icon" src="img/flaticon/png/traveler.png"></span>
 			<li>|</li>
-			<span title="Sleep"><li><img class="sleep-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/sleeping.png"></span>
+			<span title="Sleep"><li><img class="sleep-btn" alt="sleep-icon" src="img/flaticon/png/sleeping.png"></span>
 			<li>|</li>
-			<span title="Food/Water"><li><img class="foodWater-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/plate17.png"></span>
+			<span title="Food/Water"><li><img class="foodWater-btn" alt="provisions-icon" src="img/flaticon/png/plate17.png"></span>
 			<li>|</li>
-			<span title="Safety"><li><img class="safety-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/hazard5.png"></span>
+			<span title="Safety"><li><img class="safety-btn" alt="safety-icon" src="img/flaticon/png/hazard5.png"></span>
 			<li>|</li>
-			<span title="Play"><li><img class="play-btn" src="file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/flaticon/png/equipment5.png"></span>
+			<span title="Play"><li><img class="play-btn" alt="play-icon" src="img/flaticon/png/equipment5.png"></span>
 			<li>|</li>
-
 
 		</ul>
 	</div>

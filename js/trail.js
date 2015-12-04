@@ -1,6 +1,7 @@
 /*VARIABLES*/
 var trailhead = {lat: 37.203467, lng: -113.641};
 var placeType = ''; /*search keywords for radar search*/
+var names = ''; //place names for radar search
 var mapContainer = ''; /*where to place map in html*/
 
 
@@ -8,33 +9,33 @@ var mapContainer = ''; /*where to place map in html*/
 var main = function() {
 
     /* TRAIL NAV */
-    $('.map-btn').click(function(){
-       
-    });
-
     $('.photos-btn').click(function(){
        
     });
 
-    $('.highlight-btn').click(function(){
-       
-    });
-
-    $('.amenities-btn').click(function(){
-       
-    });
-
     $('.forecast-btn').click(function(){
-       
-    });
+      var text="";
 
-    $('.community-btn').click(function(){
-       
+      /*var forecast = JSON.parse(api.openweathermap.org/data/2.5/forecast?lat=37.203467&lon=-113.641&APPID=1088269cadd02d84dba9b274fc7bc097); 
+      document.getElementById("quickInfo").innerHTML = forecast.city.name;
+      
+      for (i=0; i<list.length; i++)
+          {
+              
+               text += forecast.list[i].temp + "<br>"
+              
+          }*/
     });
 
     $('.distance-btn').click(function(){
        
     });
+
+    // Impliment at later time
+    $('.community-btn').click(function(){
+       
+    });
+
     /* End Trail Nav */
     
 
@@ -52,7 +53,7 @@ var main = function() {
        currentBtn.removeClass('active-btn');
        nextBtn.addClass('active-btn');
 
-       radarSearch(trailhead, 'shop', "rec_shop_map")
+       textSearch(trailhead, 'sports store', "rec_shop_map")
     });
 
     $('.food-btn').click(function(){
@@ -297,6 +298,63 @@ var main = function() {
     /* End Nearby Trails Slides */
 };
 
+var infowindow;
+
+function textSearch(trailhead, searchText, mapContainer) {
+  //var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+
+  var map = new google.maps.Map(document.getElementById(mapContainer), {
+      center: trailhead,
+      zoom: 10
+    });
+
+  var request = {
+    location: trailhead,
+    radius: '50000',
+    query: searchText
+  };
+
+  infowindow = new google.maps.InfoWindow();
+
+  var service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, callback);
+
+
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        var place = results[i];
+        createMarker(results[i]);
+      }
+    }
+  }
+
+  function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location,
+      icon: {
+        url: 'http://maps.gstatic.com/mapfiles/circle.png',
+        anchor: new google.maps.Point(10, 10),
+        scaledSize: new google.maps.Size(10, 17)
+      }
+    });
+
+    //Handle click event for results
+    google.maps.event.addListener(marker, 'click', function() {
+      service.getDetails(place, function(result, status) {
+        if (status !== google.maps.places.PlacesServiceStatus.OK) {
+          console.error(status);
+          return;
+        }
+  
+        infoWindow.setContent(result.name + "<br>" + result.formatted_address + "<br>" + result.formatted_phone_number + "<br>" + result.rating + "<br>" + result.url);
+          infoWindow.open(map, marker);
+        });
+    });
+  }
+}
 
 function radarSearch(trailhead, placeType, mapContainer){
   /*Create map search for "placeType" around trailhead*/
@@ -329,6 +387,7 @@ function radarSearch(trailhead, placeType, mapContainer){
       function performSearch() {
         var request = {
           keyword: placeType,
+          name: names,
           location: trailhead,
           radius: 50000
         };

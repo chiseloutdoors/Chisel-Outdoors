@@ -3,18 +3,8 @@ html, body {
 	padding: 0;
 }
 
-.navbar-brand {
-  font-family: 'Michroma', sans-serif;
-}
 
-.navbar-right a{
-  font-size: 10px;
-}
 
-h1, p {
-  font-family: 'Megrim', sans-serif; 
-  font: white;
-}
 
 
 .container {
@@ -43,10 +33,12 @@ h1, p {
   height: 700px;
   color: #fff;
   text-align: center;
-	background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/highlight_photos/DSC00104.JPG);
+	background-image: url(../img/highlight_photos/DSC00104.JPG);
   background-size: cover;
 }
 .welcome h1 {
+  font-family: 'Megrim', sans-serif; 
+  font: white;
   font-size: 100px;
   margin-top: 200px;
 }
@@ -76,6 +68,17 @@ h1, p {
   bottom:0;
 }
 
+/* Instagram Feed */
+#insta_feed{
+  color: #fff;
+  height: 200px;
+  width: cover;
+  text-align: center;
+}
+#insta_feed img {
+  height: 50px;
+}
+
 /* Intro Video Section */
 .intro_vid {
   height: 600px;
@@ -83,10 +86,9 @@ h1, p {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  /*border-top: 1px solid #333;*/
   color: #fff;
   text-align: center;
-  background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/highlight_photos/DSC00077.JPG);
+  background-image: url(../img/highlight_photos/DSC00077.JPG);
   background-size: cover; 
 }
 
@@ -148,9 +150,16 @@ h1, p {
   text-align: center;
   height: 500px;
   margin-left: 60px;
-  background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/Thinkstock/ThinkstockPhotos-468747035.jpg);
+  background-image: url(../img/Thinkstock/get_started_cropped.jpg);
   background-size: cover;
   color: #fff;
+}
+#start:hover{
+  font-size: 50px;
+}
+#start:hover h2 {
+  padding-top: 100px;
+  border-bottom: 2px solid white;
 }
 #start h2{
   padding-top: 150px;
@@ -159,9 +168,16 @@ h1, p {
 #family {
   text-align: center;
   height: 500px;
-  background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/Thinkstock/ThinkstockPhotos-473422218.jpg);
+  background-image: url(../img/Thinkstock/group_hike_cropped.jpg);
   background-size: cover;
   color: #fff;
+}
+#family:hover{
+  font-size: 50px;
+}
+#family:hover h2 {
+  padding-top: 100px;
+  border-bottom: 2px solid white;
 }
 #family h2{
   padding-top: 150px;
@@ -170,9 +186,16 @@ h1, p {
 #team {
   text-align: center;
   height: 500px;
-  background-image: url(file:///Users/Alix/Documents/Repositories/Chisel/chiseloutdoors.github.io/img/highlight_photos/DSC00114.JPG);
+  background-image: url(http://cache1.asset-cache.net/xc/478937419.jpg?v=2&c=IWSAsset&k=2&d=uk8tsCDdMH-ePkCF2nV2z0WcN9rEeoa4hEPMCV6dUFiQWbO3_L343Tei79BeWYTU0);
   background-size: cover;
   color: #fff;
+}
+#team:hover{
+  font-size: 50px;
+}
+#team:hover h2 {
+  padding-top: 50px;
+  border-bottom: 2px solid white;
 }
 #team h2{
   padding-top: 150px;

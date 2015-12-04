@@ -205,7 +205,7 @@ h3 {
 
 
 /* Prep Gear Slider */
-#prepGear {
+#prep_gear {
   height: 500px;
   width: 80vh;
   width: 100%;
@@ -214,7 +214,7 @@ h3 {
   position: relative;
   margin-top: 50px;
 }
-#prepGear h3 {
+#prep_gear h3 {
   margin: 0 auto;
   padding: 0em;
   font-family: Raleway, 600;
@@ -236,15 +236,32 @@ h3 {
 
 
 
-/* Clothes Slide */
-#clothes-slide{
-	height: 500px;
+/* Prep Gear Slides */
+#promoted_clothes img{
+	height: 400px;	
+	width: 500px;
 }
-#promotedClothes img{
-	padding-top: 100px;
+#promoted_pack img{
+	height: 120%;	
 	width: 140%;
 }
-/* End Clothes Slide */
+#promoted_food img{
+	height: 120%;	
+	width: 140%;
+}
+#promoted_sleep img{
+	height: 120%;	
+	width: 140%;
+}
+#promoted_safety img{
+	height: 120%;	
+	width: 140%;
+}
+#promoted_play img{
+	height: 120%;	
+	width: 140%;
+}
+/* End Prep Gear Slides */
 
 /* Prep Gear Navigation */
 #prepGearnav {
