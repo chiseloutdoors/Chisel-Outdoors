@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geolocation</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>Search</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" type="text/css" href="css/search_style.css"/>
+  
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap/js/transition.js"></script>
+    <script src="bower_components/bootstrap/js/collapse.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+
+    <!-- 3rd Party -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat|Play|Cuprum|Orbitron|Istok+Web|Julius+Sans+One|Michroma|Megrim|Iceland|Rationale|Tulpen+One|Overlock+SC' rel='stylesheet' type='text/css'>
 
     <script src="js/search.js"></script>
-
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-
   </head>
+
   <body>
+  <!--Site Navigation-->
+    <div id="nav">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <a class="navbar-brand" href="index.html">Chisel</a>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <a class="navbar-brand" href="/register">Sign Up</a>
+          <a class="navbar-brand" href="/login">Login</a>
+        </ul>
+      </div>
+    </div>
+  <!--End Site Navigation-->
+
     <div id="map"></div>
+
+
+  <!--Footer-->
+    <div id="footer" class="footer">
+      <ul>
+        <li><a href="#">Company</a></li>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <h3>&copy; 2015 Chisel</h3>
+    </div>
+  <!--End Footer-->
+
     <script>
-// Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
-function initMap();
-
-
-
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      function initMap();
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9HruWNEZUBfdIyuBEehLKI0whMeX_bAQ&signed_in=true&callback=initMap"
+
+    <!-- To enable map sign-in add signed_in=true& before the js key --> 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9HruWNEZUBfdIyuBEehLKI0whMeX_bAQ&callback=initMap"
         async defer>
     </script>
   </body>

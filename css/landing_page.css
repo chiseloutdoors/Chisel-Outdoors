@@ -1,0 +1,23 @@
+body {
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+#landing {
+  background-image: url(../img/highlight_photos/DSC00104.jpg); 
+  height: 100%;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+img {
+	padding-top: 200px;
+	display: inline-block;
+}
+
+h1 {
+	display: inline-block;
+}

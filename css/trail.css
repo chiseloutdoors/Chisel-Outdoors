@@ -19,11 +19,13 @@ h3 {
   background-size: cover;
   display: none;
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
 }
+.container {
+	height: 500px;
+	width: 100%
+} 
 
 
 /* Page Nav Bar */
@@ -129,8 +131,8 @@ h3 {
 /* End Trail Info */
 
 /* Prep Map */
-#prepMap {
-  height: 500px;
+#prep_map {
+	height: 500px;
   width: 80vh;
   width: 100%;
   max-width: 1920px;
@@ -138,6 +140,7 @@ h3 {
   position: relative;
   margin-top: 50px;
 }
+
 .active-slide-map {
     display: block;
 }
@@ -202,7 +205,7 @@ h3 {
 
 
 /* Prep Gear Slider */
-#prepGear {
+#prep_gear {
   height: 500px;
   width: 80vh;
   width: 100%;
@@ -211,7 +214,7 @@ h3 {
   position: relative;
   margin-top: 50px;
 }
-#prepGear h3 {
+#prep_gear h3 {
   margin: 0 auto;
   padding: 0em;
   font-family: Raleway, 600;
@@ -220,7 +223,6 @@ h3 {
 .active-slide-gear {
     display: block;
 }
-
 
 .active-slide-nearby {
     display: block;
@@ -234,15 +236,32 @@ h3 {
 
 
 
-/* Clothes Slide */
-#clothes-slide{
-	height: 500px;
+/* Prep Gear Slides */
+#promoted_clothes img{
+	height: 400px;	
+	width: 500px;
 }
-#promotedClothes{
-	background-image: url(../img/Promotions/Chacos.jpg);
-	background-size: cover;
+#promoted_pack img{
+	height: 120%;	
+	width: 140%;
 }
-/* End Clothes Slide */
+#promoted_food img{
+	height: 120%;	
+	width: 140%;
+}
+#promoted_sleep img{
+	height: 120%;	
+	width: 140%;
+}
+#promoted_safety img{
+	height: 120%;	
+	width: 140%;
+}
+#promoted_play img{
+	height: 120%;	
+	width: 140%;
+}
+/* End Prep Gear Slides */
 
 /* Prep Gear Navigation */
 #prepGearnav {
