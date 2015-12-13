@@ -14,32 +14,60 @@ var main = function() {
     });
 
     $('.forecast-btn').click(function(){
-      var text="";
+      var xmlhttp = new XMLHttpRequest();
+      //query OpenWeatherMap by geolocation
+      var url = "http://api.openweathermap.org/data/2.5/forecast?lat=37.203467&lon=-113.641&APPID=1088269cadd02d84dba9b274fc7bc097&mode=html&units=imperial";
 
-      /*var forecast = JSON.parse(api.openweathermap.org/data/2.5/forecast?lat=37.203467&lon=-113.641&APPID=1088269cadd02d84dba9b274fc7bc097); 
-      document.getElementById("quickInfo").innerHTML = forecast.city.name;
+      xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          myFunction(xmlhttp.responseText);
+        }
+      }
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+
+      function myFunction(response) {
+          var arr = JSON.parse(response);
+          var date = '';
+          var avg = 0;
+          var min = [];
+          var max = [];
+          var forecast = [];
       
-      for (i=0; i<list.length; i++)
-          {
-              
-               text += forecast.list[i].temp + "<br>"
-              
-          }*/
+          //k is each day
+          for (var k = 0; k <=4; k++) {
+      
+            //i is every 3 hours
+            for (var i = 8*k; i <= 8*k+7; i++) {
+              avg = arr.list[i].main.temp + avg;
+              min[i] = arr.list[i].main.temp_min;
+              max[i] = arr.list[i].main.temp_max;
+              date = arr.list[i].dt_txt;
+            };
+      
+              //each days forecast
+              forecast[k] = date + " avg =" + Math.round(avg/8) + " min =" + Math.min.apply(null, min) + " max =" + Math.max.apply(null, max);
+              //reset avg
+              avg = 0; 
+        }
+
+        //display forecast
+          document.getElementById("quickInfo").innerHTML = forecast[0] + '<br>' + forecast[1] + '<br>' + forecast[2] + '<br>' + forecast[3] + '<br>' + forecast[4];
+      }
     });
 
     $('.distance-btn').click(function(){
        
     });
 
-    // Impliment at later time
+    // Impliment later
     $('.community-btn').click(function(){
        
     });
-
     /* End Trail Nav */
     
 
-    /* PREP MAP NAV */
+    /* PREP MAP */
     $('.services-btn').click(function(){
       var currentSlide = $('.active-slide-map');
        var nextSlide = $('#rec_shop_slide');
@@ -53,9 +81,10 @@ var main = function() {
        currentBtn.removeClass('active-btn');
        nextBtn.addClass('active-btn');
 
-       textSearch(trailhead, 'sports store', "rec_shop_map")
+       textSearch(trailhead, 'sports store', "rec_shop_map");
     });
 
+    /* Restaurants */
     $('.food-btn').click(function(){
        var currentSlide = $('.active-slide-map');
        var nextSlide = $('#food_slide');
@@ -88,7 +117,6 @@ var main = function() {
        /*Map Search*/
        radarSearch(trailhead, 'bar', "pub_map");
     });
-
 
     /* Accomodations */
     $('.accomodations-btn').click(function(){
@@ -125,7 +153,7 @@ var main = function() {
     });
 
     /* Airport */
-      $('.airfare-btn').click(function(){
+    $('.airfare-btn').click(function(){
        var currentSlide = $('.active-slide-map');
        var nextSlide = $('#airport_slide');
        currentSlide.fadeOut(600).removeClass('active-slide-map');
@@ -141,8 +169,8 @@ var main = function() {
        radarSearch(trailhead, 'airport', "airport_map");
     });
 
-      /* Camp & RVs */
-      $('.camp-btn').click(function(){
+    /* Camp & RVs */
+    $('.camp-btn').click(function(){
        var currentSlide = $('.active-slide-map');
        var nextSlide = $('#camp_slide');
        currentSlide.fadeOut(600).removeClass('active-slide-map');
@@ -158,8 +186,8 @@ var main = function() {
        radarSearch(trailhead, 'campground|rv_park', "camp_map");
     });
 
-      /* Amenities */
-      $('.amenities-btn').click(function(){
+    /* Amenities */
+    $('.amenities-btn').click(function(){
        var currentSlide = $('.active-slide-map');
        var nextSlide = $('#amenities_slide');
        currentSlide.fadeOut(600).removeClass('active-slide-map');
@@ -174,10 +202,11 @@ var main = function() {
        /*Map Search*/
        radarSearch(trailhead, 'laundry', "amenities_map");
     });
-    /* End Prep MAP Nav and Slides */
+    /* END PREP MAP */
+
 
     /* PREP GEAR */
-       $('.clothes-btn').click(function(){
+    $('.clothes-btn').click(function(){
        var currentSlide = $('.active-slide-gear');
        var nextSlide = $('#clothes-slide');
 
@@ -191,6 +220,7 @@ var main = function() {
        nextBtn.addClass('active-btn');
     });
 
+    /* Pack */
     $('.pack-btn').click(function(){
        var currentSlide = $('.active-slide-gear');
        var nextSlide = $('#pack-slide');
@@ -204,6 +234,8 @@ var main = function() {
        currentBtn.removeClass('active-btn');
        nextBtn.addClass('active-btn');
     });
+
+    /* Sleep */
     $('.sleep-btn').click(function(){
        var currentSlide = $('.active-slide-gear');
        var nextSlide = $('#sleep-slide');
@@ -217,6 +249,8 @@ var main = function() {
        currentBtn.removeClass('active-btn');
        nextBtn.addClass('active-btn');
     });
+    
+    /* Provisions */
     $('.foodWater-btn').click(function(){
        var currentSlide = $('.active-slide-gear');
        var nextSlide = $('#foodWater-slide');
@@ -230,6 +264,8 @@ var main = function() {
        currentBtn.removeClass('active-btn');
        nextBtn.addClass('active-btn');
     });
+    
+    /* Safety */
     $('.safety-btn').click(function(){
        var currentSlide = $('.active-slide-gear');
        var nextSlide = $('#safety-slide');
@@ -243,6 +279,8 @@ var main = function() {
        currentBtn.removeClass('active-btn');
        nextBtn.addClass('active-btn');
     });
+    
+    /* Play */
     $('.play-btn').click(function(){
        var currentSlide = $('.active-slide-gear');
        var nextSlide = $('#play-slide');
@@ -295,10 +333,9 @@ var main = function() {
        currentDot.removeClass('active-dot');
        prevDot.addClass('active-dot'); 
     }); 
-    /* End Nearby Trails Slides */
+    /* END NEARBY TRAILS */
 };
 
-var infowindow;
 
 function textSearch(trailhead, searchText, mapContainer) {
   //var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
@@ -429,11 +466,10 @@ function radarSearch(trailhead, placeType, mapContainer){
             });
         });
       }
-
 }
 
 function distCalc (origin, destination) {
-/* Calc distance between place and trailhead */
+ Calc distance between place and trailhead */
   var service = new google.maps.DistanceMatrixService();
   service.getDistanceMatrix(
     {

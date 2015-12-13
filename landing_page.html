@@ -2,13 +2,13 @@
 <html lang="en" ng-app="mainRouter">
 
 <head>
-	<title>Community</title>
-	<meta charset="utf-8" />
+    <title>Community</title>
+    <meta charset="utf-8" />
 
-	<!-- Link to CSS -->
-	<link rel="stylesheet" type="text/css" href="css/landing_page.css"/>
-	<!-- Link to js -->
-	<script src="js/landing_page.js"></script>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" type="text/css" href="css/landing_page.css"/>
+    <!-- Link to js -->
+    <script src="js/landing_page.js"></script>
 
     <!-- Bootstrap -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -18,21 +18,38 @@
     <script src="bower_components/bootstrap/js/collapse.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
 
-    <!-- Subscribe Popup -->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us12.list-manage.com","uuid":"62d7063fb644e3cd52cc96a84","lid":"2d08bf366a"}) })</script>
+    <!-- Link Mail Chimp Subsribe Service -->
+    <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 
-    <div class="" id="landing">
-        <img src="" alt="logo">
-        <h1>
+    <div class="" id="landing" onmousemove="showCoords(event)">
+        <img id ="logo" src="" alt="logo">
+        <h1 id="company">
             Chisel Outdoors
         </h1>
         <h3>
-            Subscribe to our email list to receive updates and be among the first to preview before launch!
+            Subscribe to our email list to receive updates and <br>be among the  first to preview before launch!
         </h3>
-        <button type="button" class="btn-lg btn-default">Subscribe</button>
+        <p id="demo"></p>
+
+    <!-- Mail Chimp Embed -->
+    <div id="mc_embed_signup">
+        <form action="//chiseloutdoors.us12.list-manage.com/subscribe/post?u=62d7063fb644e3cd52cc96a84&amp;id=2d08bf366a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+    
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_62d7063fb644e3cd52cc96a84_2d08bf366a" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+        </form>
+    </div>
+    <!--End mc_embed_signup-->
+
+
+        <!-- <button type="button" class="btn-lg btn-default">Subscribe</button> -->
     </div>
 
 </body>

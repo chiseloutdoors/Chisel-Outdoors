@@ -9,15 +9,37 @@ body {
   background-image: url(../img/highlight_photos/DSC00104.jpg); 
   height: 100%;
   background-size: cover;
-  color: #fff;
   text-align: center;
+}
+#landing h1 {
+  font-size: 100px;
+  color: #fff;
+}
+#landing h3 {
+  font-size: 40px;
+  color: #fff;
+}
+#company {
+
 }
 
 img {
-	padding-top: 200px;
-	display: inline-block;
+  display: inline-block;
+}
+h1 {
+  padding-top: 200px;
+  display: inline-block;
 }
 
-h1 {
-	display: inline-block;
+#mc_embed_signup{
+  clear:left; 
+  font:14px Helvetica,Arial,sans-serif; 
 }
+#mce-EMAIL {
+  width: 300px;
+  margin-top: 25px;
+}
+#mc-embedded-subscribe {
+  margin-top: 10px;
+}
+
