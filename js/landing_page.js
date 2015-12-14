@@ -1,3 +1,25 @@
-$('.btn-default').click(function(){
-	<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us12.list-manage.com","uuid":"62d7063fb644e3cd52cc96a84","lid":"2d08bf366a"}) })</script>       
-    });
+$(document).mousemove(function(event) {
+	cx = Math.ceil($(window).width() / 1.8);
+    cy = Math.ceil($(window).height() / 1.8);
+    dx = event.pageX - cx;
+    dy = event.pageY - cy;
+
+    tiltx = (dy / cy);
+    tilty = - (dx / cx);
+
+    $('#company').css('-webkit-transform','translate(' + dx + ', ' + dy + ')');
+    //document.getElementById("logo").style.WebkitTransform = "translate("dx"px, "dx"px)";
+    //document.getElementById("#logo").style.transform = "translate(dx',dy)";
+    //$('#landing').css.webkitTransform= "translate(dx,dy)";
+    //$('#landing').css('-webkit-transform','translatex('dx')');
+    
+});
+
+function showCoords(event) {
+    var x = event.pageX;//event.clientX;
+    var y = event.pageY;//event.clientY;
+    var coor = "X coords: " + x + ", Y coords: " + y;
+    document.getElementById("demo").innerHTML = coor;
+
+    $('company').css.webkitTransform = 'translate('+x+', '+y+')';
+}

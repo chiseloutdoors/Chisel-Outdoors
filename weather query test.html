@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+<h1>Current Weather</h1>
+<div id="current_weather"></div>
+
+<h1>Forecast</h1>
+<div id="id01"></div>
+
+<script>
+//CURRENT WEATHER
+//query OpenWeatherMap by geolocation
+  var weather_query = "http://api.openweathermap.org/data/2.5/weather?lat=37.203467&lon=-113.641&APPID=1088269cadd02d84dba9b274fc7bc097&units=imperial";
+  $.getJSON( weather_query, {
+    format: "json"
+  })
+    .done(function( data ) {
+      document.getElementById("current_weather").innerHTML = " avg =" + data.main.temp + " conditions =" + data.weather[0].description;
+    });
+
+
+//FORECAST
+var xmlhttp = new XMLHttpRequest();
+//query OpenWeatherMap by geolocation
+var url = "http://api.openweathermap.org/data/2.5/forecast?lat=37.203467&lon=-113.641&APPID=1088269cadd02d84dba9b274fc7bc097&mode=html&units=imperial";
+
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        myFunction(xmlhttp.responseText);
+    }
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(response) {
+    var arr = JSON.parse(response);
+    var date = '';
+    var avg = 0;
+    var min = [];
+    var max = [];
+    var forecast = [];
+
+    //k is each day
+    for (var k = 0; k <=4; k++) {
+
+    	//i is every 3 hours
+	    for (var i = 8*k; i <= 8*k+7; i++) {
+	    	avg = arr.list[i].main.temp + avg;
+	    	min[i] = arr.list[i].main.temp_min;
+	    	max[i] = arr.list[i].main.temp_max;
+	    	date = arr.list[i].dt_txt;
+	    };
+
+	    	//each days forecast
+	    	forecast[k] = date + " avg =" + Math.round(avg/8) + " min =" + Math.min.apply(null, min) + " max =" + Math.max.apply(null, max);
+	    	//reset avg
+	    	avg = 0; 
+	}
+
+	//display forecast in ID location
+    document.getElementById("id01").innerHTML = forecast[0] + '<br>' + forecast[1] + '<br>' + forecast[2] + '<br>' + forecast[3] + '<br>' + forecast[4];
+}
+</script>
+
+</body>
+</html>

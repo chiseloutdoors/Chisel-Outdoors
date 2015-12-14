@@ -10,110 +10,158 @@
 	<!-- Link to js -->
 	<script src="js/community.js"></script>
 
-	<!-- FRAMEWORKS -->
-	<!-- Base MasterSlider style sheet -->
-	<link rel="stylesheet" href="masterslider/style/masterslider.css" />
-	<!-- MasterSlider default skin -->
-	<link rel="stylesheet" href="masterslider/skins/default/style.css" /> 
-	<!-- MasterSlider Template Style -->
-	<link href='frameworks/Master_Slider/slider-templates/carousel3d/style/ms-caro3d.css' rel='stylesheet' type='text/css'>
-	<!-- MasterSlider main JS file -->
-	<script src="masterslider/jquery.min.js"></script>
-	<script src="masterslider/jquery.easing.min.js"></script>
-	<!-- Master Slider -->
-	<script src="masterslider/masterslider.min.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
 	<!-- Latest version of jQuery from Google CDN -->
 	<!-- You can remove it if jQuery is already included. -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <!-- JS SDK for facebook plug-in -->
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+    (document, 'script', 'facebook-jssdk'));
+    </script>
 	                    
 
 </head>
 <body>
 
+    <!-- JS SDK for facebook plug-in -->
+    <div id="fb-root"></div>
 
 
-	<!-- template -->
-    <div class="ms-caro3d-template" style="width:1600px;">
-    <!-- masterslider -->
-	<div class="master-slider ms-skin-default" id="masterslider">
-    	<!-- new slide -->
-    	<div class="ms-slide">
-         
-        	<!-- slide background -->
-        	<img src="masterslider/blank.gif" data-src="masterslider/images/1.jpg" alt="lorem ipsum dolor sit"/>     
-         
-        	<!-- slide text layer -->
-        	<div class="ms-layer ms-caption" style="top:10px; left:30px;">
-            Lorem ipsum dolor sit amet
-        	</div>
-         
-    	</div>
-    	<!-- end of slide -->
-     
-    	<!-- new slide -->
-    	<div class="ms-slide">
-         
-        	<!-- slide background -->
-        	<img src="masterslider/blank.gif" data-src="masterslider/images/2.jpg" alt="lorem ipsum dolor sit"/>     
-         
-        	<!-- slide text layer -->
-        	<div class="ms-layer ms-caption" style="top:10px; left:30px;">
-            	Lorem ipsum dolor sit amet
-        	</div>
-         
-        	<!-- linked slide -->
-        	<a href="http://codecanyon.net/user/averta">Averta</a>
-         
-    	</div>
-    	<!-- end of slide -->
-     
-	    <!-- new slide -->
-    	<div class="ms-slide">
-         
-        	<!-- slide background -->
-	        <img src="masterslider/blank.gif" data-src="masterslider/images/3.jpg" alt="lorem ipsum dolor sit"/>     
-         
-    	    <!-- slide text layer -->
-        	<div class="ms-layer ms-caption" style="top:10px; left:30px;">
-            Lorem ipsum dolor sit amet
-        	</div>
-         
-	        <!-- youtube video -->
-    	    <a href="http://www.youtube.com/embed/YHWkro9-e9Q?hd=1&wmode=opaque&controls=1&showinfo=0" data-type="video">Youtube video</a>
-         
-	    </div>
-    	<!-- end of slide -->
- 
-	</div>
-</div>
-<!-- end of masterslider -->
-        <!-- end of template -->
+    <!--Site Navigation-->
+    <div id="nav">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+        <img class="glyphicon pull-left" src="img/cairn_white.png" style="width:50px; height:50px; margin-left:5px;">
+                <a class="navbar-brand" href="index.html">Chisel</a>
+            </ul>
+            <!-- <a class="navbar-brand navbar-center" href="#">Trail Name at Snow Canyon State Park</a> -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <a class="navbar-brand" href="/register">Sign Up</a>
+                <a class="navbar-brand" href="/login">Login</a> -->
+            </ul>
+        </div>
+    </div>
+    <!--End Site Navigation-->
 
-	<!-- <div id="instagram">
+    <div>
+        <div class="jumbotron" id="jumbotron">
+            <h1>Community</h1>
+        </div>
+    </div>
+
+    <!-- INSTAGRAM -->
+	<div id="instagram">
+        <!-- SnapWidget -->
+        <img src="img/Follow-us-on-Instagram-PNG-03047.png" style="disply:inline-block;">
+        
+        <iframe id="snap_widget" src="http://snapwidget.com/sc/?u=Y2hpc2Vsb3V0ZG9vcnN8aW58MTUwfDN8M3x8bm98NXxub25lfG9uU3RhcnR8eWVzfG5v&ve=101215" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>
+
 		<iframe id="snap_widget" src="http://snapwidget.com/sc/?h=Y2hpc2Vsb3V0ZG9vcnN8aW58MTUwfDN8M3x8bm98NXxub25lfG9uU3RhcnR8eWVzfG5v&ve=301115" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>
+
+        <h3 style="display:inline-block;">Share your adventures with #chiseloutdoors</h3>
 	</div>
 	
-	<div id="music">
-		<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A4UpBTPZBmRtQFpMufi8AHi" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-	</div>
-	-->
+    <!-- SPOTIFY PLAYLISTS -->
+    <div class='spotify_gallery'>
+        <ul>
+            <li>
+                <!-- Chisel -->
+                <div class="playlist">
+                    <h3>Chisel</h3>
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A4UpBTPZBmRtQFpMufi8AHi" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </li>
+            <li>
+                <!-- Roadtrip -->
+                <div class="playlist">
+                    <h3>Roadtrip</h3>
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A70p6HyGwnC4T7L1oN389E7" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </li>
+            <li>
+                <!-- Peace -->
+                <div class="playlist">
+                <h3>Peace</h3>
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A7oCM3YIKD9O5N7vV6khNyJ" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </li>
+            <li>
+                <!-- Eden -->
+                <div class="playlist">
+                    <h3>Eden</h3>
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A1DTu5T2NFTNG3Eceumf3rc" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </li>
+            <li>
+              <!-- Roadtrip -->
+                <div class="playlist">
+                    <h3>Roadtrip</h3>
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A70p6HyGwnC4T7L1oN389E7" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </li>
+            <li>
+              <!-- Roadtrip -->
+                <div class="playlist">
+                    <h3>Roadtrip</h3>
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A70p6HyGwnC4T7L1oN389E7" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </li>
+            <li>
+              <!-- Roadtrip -->
+                <div class="playlist">
+                    <h3>Roadtrip</h3>
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A70p6HyGwnC4T7L1oN389E7" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </li>
+            <li>
+              <!-- Roadtrip -->
+                <div class="playlist">
+                    <h3>Roadtrip</h3>
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A70p6HyGwnC4T7L1oN389E7" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </li>
+            <li>
+              <!-- Roadtrip -->
+                <div class="playlist">
+                    <h3>Roadtrip</h3>
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A70p6HyGwnC4T7L1oN389E7" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </li>
+        </ul>
+    </div>
 
+    <!-- FACEBOOK -->
+    <div id="facebook">
+        <div class="fb-page" data-href="https://www.facebook.com/chiseloutdoors" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            <div class="fb-xfbml-parse-ignore">
+                <blockquote cite="https://www.facebook.com/chiseloutdoors">
+                    <a href="https://www.facebook.com/chiseloutdoors">Chisel Outdoors</a>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div id="footer" class="footer">
+        <ul>
+            <li><a href="#">Company</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <h3>&copy; 2015 Chisel</h3>
+    </div>
+    <!--End Footer-->
 
 </body>
-
-	<script>
-    var slider = new MasterSlider();
-    slider.setup('masterslider' , {
-            width:800,    // slider standard width
-            height:350,   // slider standard height
-            space:5,
-            loop:true
-            // more slider options goes here...
-            // check slider options section in documentation for more options.
-        });
-    // adds Arrows navigation control to the slider.
-    slider.control('arrows');
-	</script>
 
 </html>
