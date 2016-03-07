@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" ng-app="mainRouter">
+
+<head>
+	<title>Community</title>
+	<meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/png" href="http://chiseloutdoors.com/beta/img/brand/cairn_grey.png"/>
+    <link rel="shortcut icon" type="image/png" href="/"/>
+
+    <!-- Bootstrap -->
+    <link href="http://chiseloutdoors.com/beta/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="http://chiseloutdoors.com/beta/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="http://chiseloutdoors.com/beta/bower_components/bootstrap/js/transition.js"></script>
+    <script src="http://chiseloutdoors.com/beta/bower_components/bootstrap/js/collapse.js"></script>
+    <script src="http://chiseloutdoors.com/beta/bower_components/jquery/dist/jquery.min.js"></script>
+
+	<!-- Link to CSS -->
+	<link rel="stylesheet" type="text/css" href="community.css"/>
+	<!-- Link to js -->
+	<script src="community.js"></script>
+
+    <!-- Base MasterSlider style sheet -->
+    <link rel="stylesheet" href="http://chiseloutdoors.com/beta/masterslider/style/masterslider.css" />
+    <!-- MasterSlider default skin -->
+    <link rel="stylesheet" href="http://chiseloutdoors.com/beta/masterslider/skins/default/style.css" />
+    <link rel="stylesheet" href="http://chiseloutdoors.com/beta/masterslider/skins/black-1/style.css" />
+    <!-- Latest version of jQuery from Google CDN -->
+    <!-- You can remove it if jQuery is already included. -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- MasterSlider main JS file -->
+    <script src="http://chiseloutdoors.com/beta/masterslider/jquery.min.js"></script>
+    <script src="http://chiseloutdoors.com/beta/masterslider/masterslider.min.js"></script>
+    <!-- MasterSlider Template Style -->
+    <link href='http://chiseloutdoors.com/beta/masterslider/slider-templates/partialview/style/ms-partialview.css' rel='stylesheet' type='text/css'>
+    <!-- google font Lato -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+	                    
+
+</head>
+<body>
+    <!--Site Navigation-->
+    <div id="nav">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+        <img class="glyphicon pull-left" src="http://chiseloutdoors.com/beta/img/brand/cairn_white.png" style="width:50px; height:50px; margin-left:5px;">
+                <a class="navbar-brand" href="http://chiseloutdoors.com/beta/">Chisel</a>
+            </ul>
+            <!-- <a class="navbar-brand navbar-center" href="#">Trail Name at Snow Canyon State Park</a> -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <a class="navbar-brand" href="/register">Sign Up</a>
+                <a class="navbar-brand" href="/login">Login</a> -->
+            </ul>
+        </div>
+    </div>
+    <!--End Site Navigation-->
+
+    <div>
+        <div class="jumbotron" id="jumbotron">
+            <h1>Community</h1>
+        </div>
+    </div>
+
+    <!-- INSTAGRAM -->
+	<div id="instagram">
+        <!-- SnapWidget -->
+        <a href="https://www.instagram.com/chiseloutdoors/?ref=badge" style=""><img src="http://chiseloutdoors.com/beta/img/social/Follow-us-on-Instagram-PNG-03047.png"></a>
+        
+        <iframe id="snap_widget" src="http://snapwidget.com/sc/?u=Y2hpc2Vsb3V0ZG9vcnN8aW58MTUwfDN8M3x8bm98NXxub25lfG9uU3RhcnR8eWVzfG5v&ve=101215" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>
+
+		<iframe id="snap_widget" src="http://snapwidget.com/sc/?h=Y2hpc2Vsb3V0ZG9vcnN8aW58MTUwfDN8M3x8bm98NXxub25lfG9uU3RhcnR8eWVzfG5v&ve=301115" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>
+
+        <h3 style="display:inline-block;">Share your adventures with #chiseloutdoors</h3>
+	</div>
+	
+    
+
+    <!-- FACEBOOK -->
+    <!-- <div id="facebook">
+        <div class="fb-page" data-href="https://www.facebook.com/chiseloutdoors" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+            <div class="fb-xfbml-parse-ignore">
+                <blockquote cite="https://www.facebook.com/chiseloutdoors">
+                    <a href="https://www.facebook.com/chiseloutdoors">Chisel Outdoors</a>
+                </blockquote>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Spotify -->
+    <!-- masterslider -->
+    <div id="spotify">
+        <h3>Email us your playlists for the outdoors to have them featured.</h3>
+        <div class="ms-partialview-template" id="spotify-slider">
+            <!-- masterslider -->
+            <div class="master-slider ms-skin-black-1" id="masterslider-spotify">
+                <div class="ms-slide">
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A4UpBTPZBmRtQFpMufi8AHi" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                    <div class="ms-info">
+                        <h3>Chisel</h3>
+                        <h4>Alix Cave</h4>
+                        <p>Tunes that inspire us to keep going.</p>
+                    </div>  
+                </div>
+                <div class="ms-slide">
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A70p6HyGwnC4T7L1oN389E7" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>   
+                      <div class="ms-info">
+                        <h3>Road Trip</h3>
+                        <h4>Alix Cave</h4>
+                        <p>Road trips are fun with friends and best <br>with music for everyone to sing to.</p>
+                    </div>
+                </div>
+                <div class="ms-slide">
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A22ftRuryOSzy50pXsUq7YK" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>   
+                     <div class="ms-info">
+                        <h3>Around the Fire</h3>
+                        <h4>Alix Cave</h4>
+                        <p>There's nothing better than food and friends <br> around a warm fire after a day of trailing.</p>
+                    </div>
+                </div>
+                <div class="ms-slide">
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A1CNeMTlPm5IWTAkYarFq4u" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                        <div class="ms-info">
+                        <h3>Vagabonding</h3>
+                        <h4>Alix Cave</h4>
+                        <p>For the independent traveler.</p>
+                    </div> 
+                </div>
+                <div class="ms-slide">
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A5WvqoJ4ltgvzEM7qDRAZ0M" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>  
+                       <div class="ms-info">
+                        <h3>Desert Rave</h3>
+                        <h4>Alix Cave</h4>
+                        <p>When there's no one else to judge how you dance.</p>
+                    </div> 
+                </div>
+                <div class="ms-slide">
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A2eArylhgVNNKOnzy8k75nx" width="300" height="380" frameborder="0" allowtransparency="true"></iframe> 
+                       <div class="ms-info">
+                        <h3>Gear Up</h3>
+                        <h4>Alix Cave</h4>
+                        <p>Travel light, travel flexible.</p>
+                    </div> 
+                </div>
+                <div class="ms-slide">
+                    <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1283098113%3Aplaylist%3A7e0JjNPB8M5RYdXSFtQRth" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+                       <div class="ms-info">
+                        <h3>Acoustic</h3>
+                        <h4>Alix Cave</h4>
+                        <p>Feel at home wherever you are.</p>
+                    </div> 
+                </div>
+            </div>
+            <!-- end of masterslider -->
+        </div>
+    </div>
+
+    <!-- masterslider -->
+    <div id="youtube">
+        <div class="master-slider ms-skin-default" id="masterslider-youtube">
+ 
+        <!-- new slide -->
+        <div class="ms-slide slide-7" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" data-src="http://chiseloutdoors.com/beta/img/video_thumbnails/fireballs.jpg" alt="Slide3 Background">    
+            <!--<a href="http://player.vimeo.com/video/146780242" data-type="video">REDBULL</a>-->
+            <a href="http://www.youtube.com/embed/zeLbkhpWL1U" data-type="video">Emergency Tinder</a>
+         
+            <h3 class="ms-layer hps-title1" style="left: 830px; top: 220px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            Fullscreen
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" style="left: 835px;top: 284px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            Video Support
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" style="left: 835px;top: 318px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            with Custom Video Cover
+            </h3>
+        </div>
+        <!-- end of slide -->
+        <!-- new slide -->
+        <div class="ms-slide slide-7" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" data-src="http://chiseloutdoors.com/beta/img/video_thumbnails/crash_shelter.jpg" alt="Slide3 Background">    
+            <a href="http://www.youtube.com/embed/_3K97KPaxLo" data-type="video">Crash Camp Shelter</a>
+         
+            <h3 class="ms-layer hps-title1" style="left: 830px; top: 220px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            Fullscreen
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" style="left: 835px;top: 284px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            Video Support
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" style="left: 835px;top: 318px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            with Custom Video Cover
+            </h3>
+        </div>
+        <!-- end of slide -->
+        <!-- new slide -->
+        <div class="ms-slide slide-7" data-delay="6">
+          
+            <!-- slide background -->
+            <img src="masterslider/blank.gif" data-src="http://chiseloutdoors.com/beta/img/video_thumbnails/stove.jpg" alt="Slide3 Background">    
+            <a href="http://www.youtube.com/embed/Vu9rE8i0YW4" data-type="video">Stove and Shield</a>
+         
+            <h3 class="ms-layer hps-title1" style="left: 830px; top: 220px;" data-type="text" data-duration="1400" data-ease="easeOutExpo" data-effect="rotate3dtop(90,0,0,80)">
+            Fullscreen
+            </h3>
+         
+            <h3 class="ms-layer hps-title2" style="left: 835px;top: 284px;" data-type="text" data-duration="1800" data-delay="140" data-ease="easeOutExpo" data-effect="bottom(40)">
+            Video Support
+            </h3>
+         
+            <h3 class="ms-layer hps-title3" style="left: 835px;top: 318px;" data-type="text" data-delay="1000" data-ease="easeOutExpo" data-duration="1230" data-effect="scale(1.5,1.6)">
+            with Custom Video Cover
+            </h3>
+        </div>
+        <!-- end of slide -->
+    </div>
+
+
+    <!--Footer-->
+  <div id="footer" class="footer">
+      <ul>
+          <li>Send us feedback good, bad, or otherwise at chiseloutdoorstemp@gmail.com</li>
+      </ul>
+      <h3>&copy; 2015 Chisel</h3>
+  </div>
+  <!--End Footer-->
+
+</body>
+
+<script>
+    var slider = new MasterSlider();
+ 
+    slider.control('arrows');  
+    slider.control('slideinfo',{insertTo:"#spotify-slider" , autohide:false, align:'bottom', size:160});
+    slider.control('circletimer' , {color:"#FFFFFF" , stroke:9});
+ 
+    slider.setup('masterslider-spotify' , {
+        width:760,
+        height:400,
+        space:20,
+        loop:true,
+        view:'partialWave',
+        layout:'partialview',
+        centerControls: false
+    });
+</script>
+
+<script type="text/javascript">
+         
+   var slider = new MasterSlider();
+ 
+    // adds Arrows navigation control to the slider.
+    slider.control('arrows');
+    slider.control('timebar' , {insertTo:'#masterslider-youtube'});
+    slider.control('bullets');
+ 
+     slider.setup('masterslider-youtube' , {
+         width:1400,    // slider standard width
+         height:580,   // slider standard height
+         space:1,
+         layout:'fullwidth',
+         loop:true,
+         preload:0,
+         autoplay:true
+    });
+ 
+</script>
+
+
+</html>
